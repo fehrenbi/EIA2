@@ -8,7 +8,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 document.addEventListener("DOMContentLoaded", function () {
     var name;
     name = prompt("Gebe hier bitte deinen Namen ein");
-    var greet = "Guten Tag";
+    var greet = "Schön, dass du da bist";
     document.body.innerHTML = greet + " " + name;
 });
 //# sourceMappingURL=aufgabe0.js.map
