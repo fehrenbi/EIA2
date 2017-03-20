@@ -8,8 +8,10 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 
 document.addEventListener("DOMContentLoaded", function(): void {
+    
     var name: string;
     name = prompt ("Gebe hier bitte deinen Namen ein");
     var greet: string = "Schön, dass du da bist";
     document.body.innerHTML = greet + " " + name;
-    });
+    
+});
