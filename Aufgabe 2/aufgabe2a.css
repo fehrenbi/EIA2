@@ -1,17 +1,14 @@
-body {
-    width: 656px;
-}
-.board {
-    height: 80px;
-    width: 80px;
-    border: 1px solid black;
-    float: left;
+
+.black {
+	background-color: black;
+	color: white;
 }
 
 .white {
-    background: white;
+	background-color: white;
+	color: black;
 }
 
-.black {
-    background: black;   
+div {
+	text-align: center;
 }
