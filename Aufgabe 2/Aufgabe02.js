@@ -1,8 +1,8 @@
 /*
 Aufgabe 02
-Name: Elyssia-Sofie D�rr
-Matrikel:
-Datum: 29.03.17
+Name: Luise Fehrenbach
+Matrikel: 254668
+Datum: 31.03.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert.
