@@ -18,17 +18,17 @@ window.onload = function () {
 };
 function placeDivs() {
     var rice = 1;
-    var row_counter = 0;
+    var zeile = 0;
     for (var i = 0; i < 64; i++) {
         var element = document.createElement("div");
-        if (((i + row_counter) % 2) == 0) {
+        if (((i + zeile) % 2) == 0) {
             element.className = "board white";
         }
         else {
             element.className = "board black";
         }
         if (((i + 1) % 8) == 0) {
-            row_counter++;
+            zeile++;
         }
         element.innerText = "" + rice;
         rice *= 2;
