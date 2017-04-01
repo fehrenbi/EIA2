@@ -10,10 +10,10 @@ window.onload = function () {
     placeDivs();
 };
 
-function placeDivs() {
-    var rice = 1;
-    var zeile = 0;
-    for (var i = 0; i < 64; i++) {
+function placeDivs(): void {
+    var rice: number = 1;
+    var zeile: number = 0;
+    for (var i: number = 0; i < 64; i++) {
         var element = document.createElement("div");
         if (((i + zeile) % 2) == 0) {
             element.className = "board white";
