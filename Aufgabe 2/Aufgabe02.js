@@ -1,20 +1,13 @@
 /*
-Aufgabe 02
+Aufgabe 2a
 Name: Luise Fehrenbach
 Matrikel: 254668
 Datum: 31.03.17
     
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
-Er wurde nicht kopiert und auch nicht diktiert.
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 window.onload = function () {
     placeDivs();
-    /*let table: HTMLTableElement = document.createElement("table");
-    let row: HTMLTableRowElement = document.createElement("tr");
-    let column: HTMLTableCellElement = document.createElement("td");
-    table.appendChild(row);
-    row.appendChild(column);
-    document.body.appendChild(table);*/
 };
 function placeDivs() {
     var rice = 1;
