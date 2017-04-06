@@ -7,6 +7,10 @@ Datum: 6.4.17
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 
+body{
+	height:1000px;
+}
+
 #ziehstapel {
 	background-color: red;
 	width:150px;
@@ -17,12 +21,13 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 	background-color:black;
 	width:150px;
 	height:200px;
-	margin-left:300px;
-	margin-top:-198px;
+	margin-top: 50px;
 }
 
 #hand {
 	background-color: green;
-	width:700px;
-	heigth:150px;
+	width: 400px;
+	height: 200px;
+	margin-left: 200px;
+	margin-top: -310px;
 }

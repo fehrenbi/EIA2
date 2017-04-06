@@ -12,3 +12,10 @@ let karten: string[] = ["Karo7", "Karo8", "Karo9", "Karo10", "KaroBube", "KaroDa
                         "Pik7", "Pik8", "Pik9", "Pik10", "PikBube", "PikDame", "PikKönig", "PikAss",
                         "Kreuz7", "Kreuz8", "Kreuz9", "Kreuz10", "KreuzBube", "KreuzDame", "KreuzKönig", "KreuzAss"];
 
+document.getElementById("ziehstapel").addEventListener("click", function(){
+    }
+var handkarten: string = document.getElementsByClassName("handkarten");
+handkarten.addEventListener("click", function(){
+    }
+    
+    
