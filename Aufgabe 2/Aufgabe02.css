@@ -24,3 +24,7 @@ body {
     background: black;   
     color: white;
 }
+
+.selected {
+	background-color: red;
+}

@@ -29,3 +29,9 @@ function placeDivs(): void {
         document.body.appendChild(element);
     }
 }
+let divList : NodeListOf<HTMLElement> = document.getElementsByTagName("div");
+for (let i: number = 0; i < 9; i++) {
+        divList[i].addEventListener("click", function() {
+        this.classList.toggle("selected");
+        showSummeKoerner();
+    }
