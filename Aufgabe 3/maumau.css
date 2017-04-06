@@ -6,3 +6,9 @@ Datum: 6.4.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
+
+#ziehstapel {
+	background-color: red;
+	width:100px;
+	height: 200px;
+}
