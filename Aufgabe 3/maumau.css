@@ -9,6 +9,20 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 #ziehstapel {
 	background-color: red;
-	width:100px;
+	width:150px;
 	height: 200px;
+}
+
+#ablegestapel {
+	background-color:black;
+	width:150px;
+	height:200px;
+	margin-left:300px;
+	margin-top:-198px;
+}
+
+#hand {
+	background-color: green;
+	width:700px;
+	heigth:150px;
 }
