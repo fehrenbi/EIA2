@@ -29,9 +29,33 @@ function placeDivs(): void {
         document.body.appendChild(element);
     }
 }
-let divList : NodeListOf<HTMLElement> = document.getElementsByTagName("div");
+let divList: NodeListOf<HTMLElement> = document.getElementsByTagName("div");
 for (let i: number = 0; i < 9; i++) {
         divList[i].addEventListener("click", function() {
         this.classList.toggle("selected");
         showSummeKoerner();
     }
+            
+function showSummeKoerner():void {
+    let selectedDivs : NodeListOf<Element> = document.getElementsByClassName("selected");
+    let summeKoerner : number = 0;
+
+    if (selectedDivs.length == 0){  /* Zeigt die Tooltip Box nur an, wenn Felder selektiert sind */
+        document.getElementById("tooltip").style.display = "none";
+    }
+    else {
+        document.getElementById("tooltip").style.display = "inline-block";
+    }
+
+    for (let i = 0; i < selectedDivs.length; i++) {  /* Schreibt die Summe der Körner auf den selektierten Feldern in die Tooltip Box */
+        summeKoerner += Number(selectedDivs[i].textContent);
+        document.getElementById("tooltip").textContent = "Summe der selektierten Reiskörner:" + "\r\n" + "Dezimal: " + summeKoerner.toString() + "\r\n" + "Hexadezimal: " + summeKoerner.toString(16);
+    }
+}
+
+
+
+document.addEventListener("mousemove", function(Event) { /* Sorgt dafür, dass die Tooltip Box die Maus verfolgt */
+    document.getElementById("tooltip").style.left = (Event.clientX+10) + "px";
+    document.getElementById("tooltip").style.top = (Event.clientY+10) + "px";
+}
