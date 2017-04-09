@@ -6,12 +6,14 @@ Datum: 31.03.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
+let rice: number = 1;
+
 window.onload = function () {
     placeDivs();
 };
 
 function placeDivs(): void {
-    var rice: number = 1;
+   // var rice: number = 1;
     var zeile: number = 0;
     for (var i: number = 0; i < 64; i++) {
         var element = document.createElement("div");
