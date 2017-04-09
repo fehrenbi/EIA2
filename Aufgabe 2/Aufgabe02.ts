@@ -40,10 +40,12 @@ function placeDivs(): void {
     box.innerText = "" + rice;
     box.style.display = "none";
     for (let i = 0; i < 8; i++) {
-        divList[i].addEventListener("click", selection);
+        divList[i].addEventListener("click", function(){
+            selection();
+            }
         divList[i].addEventListener("mousemove", movingBox);
     }
-    function selection(_event) {
+    function selection {
         let clickedDiv = _event.target;
         console.log("border color = " + clickedDiv.style.border);
         if (clickedDiv.style.border == "solid black") {
@@ -54,6 +56,6 @@ function placeDivs(): void {
             clickedDiv.style.border = "solid black";
         }
     }
-    function movingBox(_event) {
+    function movingBox {
         document.getElementById("box").style.display = "block"; //Box wird sichtbar
     }
