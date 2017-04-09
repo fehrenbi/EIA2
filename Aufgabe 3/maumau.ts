@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
         "Herz 7", "Herz 8", "Herz 9", "Herz 10", "Herz Ass", "Herz Bube", "Herz Dame",
         "Pik 7", "Pik 8", "Pik 9", "Pik 10", "Pik Ass", "Pik Bube", "Pik Dame",
         "Kreuz 7", "Kreuz 8", "Kreuz 9", "Karo 10", "Kreuz Ass", "Kreuz Bube", "Kreuz Dame"];
-    let deck = document.getElementById("deck");
-    let discard = document.getElementById("discard");
+    let deck = document.getElementById("ziehstapel");
+    let discard = document.getElementById("ablegestapel");
     let hand = document.getElementById("hand");
     let handCards = []; //Array mit 5 gezogenen Karten 
     let i = 0;
