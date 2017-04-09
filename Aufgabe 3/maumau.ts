@@ -11,11 +11,17 @@ let karten: string[] = ["Karo7", "Karo8", "Karo9", "Karo10", "KaroBube", "KaroDa
                         "Herz7", "Herz8", "Herz9", "Herz10", "HerzBube", "HerzDame", "HerzKönig", "HerzAss",
                         "Pik7", "Pik8", "Pik9", "Pik10", "PikBube", "PikDame", "PikKönig", "PikAss",
                         "Kreuz7", "Kreuz8", "Kreuz9", "Kreuz10", "KreuzBube", "KreuzDame", "KreuzKönig", "KreuzAss"];
+let kartenAufHand: number = 0;
+let abgelegteKarten: number = 0;
+let restkarten: number = karten.length - KartenAufHand;
 
-document.getElementById("ziehstapel").addEventListener("click", function(){
+document.getElementById("ziehstapel").addEventListener("click", function() {
+    if (kartenAufHand < 5 && restkarten > 0) {
+        let zufälligeKarte: number = Math.floor((Math.random() * 31) + 0); 
+        while (karten[zufälligeKarte]) == undefined) {
+            zufälligeKarte = Math.floor((Math.random() * 31) + 0);
     }
-var handkarten: string = document.getElementsByClassName("handkarten");
-handkarten.addEventListener("click", function(){
-    }
+    
+
     
     

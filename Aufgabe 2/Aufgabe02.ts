@@ -29,3 +29,29 @@ function placeDivs(): void {
         document.body.appendChild(element);
     }
 }
+
+    document.getElementsByTagName("div")[0];
+    let divList = document.getElementsByTagName("div");
+    //Box, die sich mitbewegt
+    let box = document.createElement("div");
+    document.body.appendChild(box);
+    box.innerText = "" + rice;
+    box.style.display = "none";
+    for (let i = 0; i < 8; i++) {
+        divList[i].addEventListener("click", selection);
+        divList[i].addEventListener("mousemove", movingBox);
+    }
+    function selection(_event) {
+        let clickedDiv = _event.target;
+        console.log("border color = " + clickedDiv.style.border);
+        if (clickedDiv.style.border == "solid black") {
+            clickedDiv.style.border = "solid red";
+            console.log("border color = " + clickedDiv.style.border);
+        }
+        else {
+            clickedDiv.style.border = "solid black";
+        }
+    }
+    function movingBox(_event) {
+        document.getElementById("box").style.display = "block"; //Box wird sichtbar
+    }
