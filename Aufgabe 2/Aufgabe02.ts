@@ -43,7 +43,9 @@ function placeDivs(): void {
         divList[i].addEventListener("click", function(){
             selection();
             }
-        divList[i].addEventListener("mousemove", movingBox);
+        divList[i].addEventListener("mousemove", function(){
+            movingBox();
+            }
     }
     function selection {
         let clickedDiv = _event.target;
