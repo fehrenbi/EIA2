@@ -1,12 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    //Array anlegen
     let allCards = ["Karo 7", "Karo 8", "Karo 9", "Karo 10", "Karo Ass", "Karo Bube", "Karo Dame",
         "Herz 7", "Herz 8", "Herz 9", "Herz 10", "Herz Ass", "Herz Bube", "Herz Dame",
         "Pik 7", "Pik 8", "Pik 9", "Pik 10", "Pik Ass", "Pik Bube", "Pik Dame",
         "Kreuz 7", "Kreuz 8", "Kreuz 9", "Karo 10", "Kreuz Ass", "Kreuz Bube", "Kreuz Dame"];
-    // Nachziehstapel (deck) 
     let nachziehStapel = document.getElementById("deck");
-    //Eventlistener auf den Nachziehstapel
     nachziehStapel.addEventListener("click", function () {
         //Zufallskarte generieren
         let zufallsKarte = allCards.splice(Math.round(Math.random() * (allCards.length - 1)), 1)[0];
