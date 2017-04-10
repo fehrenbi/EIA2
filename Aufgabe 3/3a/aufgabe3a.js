@@ -31,6 +31,4 @@ function placeDivs(): void {
         document.body.appendChild(element);
     }
 }
-
-
 //# sourceMappingURL=aufgabe3a.js.map
