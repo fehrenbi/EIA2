@@ -42,6 +42,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     function mark(event) {
-        
-
-
+        let target = event.target;
+        if (target.className.includes("marked")){
+            if (target.className.includes("black")){
+                target.className = "board black";
+            }
+            else {
+                target.className = "board white";
+            }
+        else {
+                target.className += " marked";
+                }
+        sum = 0;
+        let marked = document.getElementsByClassName("marked");
+        for (let n = 0; n < marked.length; n++) {
+            sum += parseInt(marked[n].innerText);
+            mouseBox.innerText = "Dez.:" + sum.toString() + "\r\n" + "hexDez.:" + sum.toString(16);
+            }
+            if (marked.length == 0) {
+                mouseBox.style.display = "none";
+                }
+            else {
+                mouseBox.style.display = "inline-block";
+                }
+            console.log(sum + "\r\n" + sum.toString(16));
+            }
+});
