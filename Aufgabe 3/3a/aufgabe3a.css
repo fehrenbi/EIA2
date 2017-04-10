@@ -1,0 +1,30 @@
+/*
+Aufgabe 3a
+Name: Luise Fehrenbach
+Matrikel: 254668
+Datum: 9.4.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
+body {
+    width: 656px;
+}
+.board {
+    height: 80px;
+    width: 80px;
+    float: left;
+}
+
+.white {
+    background: white;
+}
+
+.black {
+    background: black;   
+    color: white;
+}
+
+.selected {
+	background-color: red;
+}
