@@ -25,6 +25,24 @@ body {
     color: white;
 }
 
-.selected {
-	background-color: red;
+.marked {
+	background-color:maroon;
+	color:white;
+}
+	
+body > div:nth-child(8n+1) {
+			clear: left;
+			;}
+			
+.mouseBox {
+	padding-top:5px; 
+
+border: 1px solid #00b3b3;
+height: 90px;
+width: 110px; 
+background-color: #c2f0f0;
+display:none;
+position: absolute;
+z-index: 1000;
+
 }
