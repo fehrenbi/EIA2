@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function(): void {
     drawMountain(700, 250);
     drawMountain(850, 250);
     
+    //Funktionen
+    
     function drawMountain (_x: number, _y: number): void {
         crc2.beginPath();
         crc2.fillStyle = "#BEBEBE";
