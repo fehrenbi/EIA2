@@ -16,6 +16,19 @@ document.addEventListener("DOMContentLoaded", function(): void {
     let crc2: CanvasRenderingContext2D;
     crc2 = canvas.getContext("2d");
     
+    //Blumenwiese
+    crc2.beginPath();
+    crc2.fillStyle = "#32CD32";
+    crc2.rect(0, 0, canvas.width, canvas.height);
+    crc2.fill();
+    
+    //Himmel
+    crc2.beginPath();
+    crc2.fillStyle = "#B0E2FF";
+    crc2.rect(0, 0, canvas.width, 130);
+    crc2.fill();
+    
+    
     
     
     
