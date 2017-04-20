@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     drawSun(400, 250);
     drawTree();
     drawKleeblatt(500, 400);
+    drawFlowerPink(600, 400);
     //Funktionen
     function drawMountain(_x, _y, _fillColor) {
         crc2.beginPath();
@@ -97,6 +98,22 @@ document.addEventListener("DOMContentLoaded", function () {
         crc2.lineTo(_x + 7.5, _y + 25);
         crc2.closePath();
         crc2.fill();
+    }
+    function drawFlowerPink(_x, _y) {
+        crc2.beginPath();
+        crc2.fillStyle = "#FF1493";
+        crc2.strokeStyle = "#228B22";
+        crc2.moveTo(_x, _y);
+        crc2.lineTo(_x + 16, _y - 24);
+        crc2.lineTo(_x + 8, _y - 16);
+        crc2.lineTo(_x, _y - 24);
+        crc2.lineTo(_x - 8, _y - 16);
+        crc2.lineTo(_x - 16, _y - 24);
+        crc2.moveTo(_x, _y);
+        crc2.lineTo(_x, _y + 20);
+        crc2.closePath();
+        crc2.fill();
+        crc2.stroke();
     }
 });
 //# sourceMappingURL=blumenwiese.js.map

@@ -39,6 +39,8 @@ document.addEventListener("DOMContentLoaded", function(): void {
     drawTree();    
     
     drawKleeblatt(500, 400);
+    
+    drawFlowerPink(600, 400);
    
     
  //Funktionen
@@ -61,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
         crc2.fill();
     }    
     
-    function drawTree ():void {
+    function drawTree (): void {
         crc2.beginPath();
         crc2.fillStyle = "#8B5A2B";
         crc2.rect(0, 0, 150, canvas.height);
@@ -113,6 +115,23 @@ document.addEventListener("DOMContentLoaded", function(): void {
         crc2.lineTo(_x + 7.5, _y + 25);
         crc2.closePath();
         crc2.fill(); 
+    }
+    
+    function drawFlowerPink (_x: number, _y: number): void {
+        crc2.beginPath();
+        crc2.fillStyle = "#FF1493";
+        crc2.strokeStyle = "#228B22";
+        crc2.moveTo(_x, _y);
+        crc2.lineTo(_x + 16, _y - 24);
+        crc2.lineTo(_x + 8, _y - 16);
+        crc2.lineTo(_x, _y - 24);
+        crc2.lineTo(_x - 8, _y - 16);
+        crc2.lineTo(_x - 16, _y - 24);
+        crc2.moveTo(_x, _y);
+        crc2.lineTo(_x, _y + 20);
+        crc2.closePath();
+        crc2.fill();
+        crc2.stroke();   
     }
     
     
