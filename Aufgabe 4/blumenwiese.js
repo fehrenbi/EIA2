@@ -73,11 +73,28 @@ document.addEventListener("DOMContentLoaded", function () {
     function drawKleeblatt(_x, _y) {
         crc2.beginPath();
         crc2.fillStyle = "#228B22";
-        crc2.moveTo(_x, _y);
-        crc2.arc(_x, _y, 30, 0, 80);
-        crc2.arc(_x, _y, 30, 60, 170);
-        crc2.arc(_x, _y, 30, 180, 230);
-        crc2.arc(_x, _y, 30, 240, 350);
+        crc2.arc(_x, _y, 15, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "#228B22";
+        crc2.arc(_x + 15, _y, 15, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "#228B22";
+        crc2.arc(_x + 15, _y + 15, 15, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "#228B22";
+        crc2.arc(_x, _y + 15, 15, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "#228B22";
+        crc2.moveTo(_x + 7.5, _y + 7.5);
+        crc2.lineTo(_x + 7.5, _y + 25);
         crc2.closePath();
         crc2.fill();
     }
