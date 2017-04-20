@@ -93,30 +93,34 @@ document.addEventListener("DOMContentLoaded", function(): void {
     function drawKleeblatt (_x: number, _y: number): void {
         crc2.beginPath();
         crc2.fillStyle = "#228B22";
-        crc2.arc(_x, _y, 15, 0, Math.PI * 2, true);
+        crc2.arc(_x, _y, 10, 0, Math.PI * 2, true);
         crc2.closePath();
         crc2.fill();   
         crc2.beginPath();
         crc2.fillStyle = "#228B22";
-        crc2.arc(_x + 15, _y, 15, 0, Math.PI * 2, true);
+        crc2.arc(_x + 15, _y, 10, 0, Math.PI * 2, true);
         crc2.closePath();
         crc2.fill(); 
         crc2.beginPath();
         crc2.fillStyle = "#228B22";
-        crc2.arc(_x + 15, _y + 15, 15, 0, Math.PI * 2, true);
+        crc2.arc(_x + 15, _y + 15, 10, 0, Math.PI * 2, true);
         crc2.closePath();
         crc2.fill();    
         crc2.beginPath();
         crc2.fillStyle = "#228B22";
-        crc2.arc(_x, _y + 15, 15, 0, Math.PI * 2, true);
+        crc2.arc(_x, _y + 15, 10, 0, Math.PI * 2, true);
         crc2.closePath();
         crc2.fill();   
         crc2.beginPath();
         crc2.strokeStyle = "#228B22";
-        crc2.moveTo(_x + 7.5, _y + 7.5);
-        crc2.lineTo(_x + 7.5, _y + 20);
+        crc2.fillStyle = "#228B22";
+        crc2.moveTo(_x + 5, _y + 5);
+        crc2.lineTo(_x + 5, _y + 30);
+        crc2.lineTo(_x + 10, _y + 10);
+        crc2.lineTo(_x, _y + 15);
         crc2.closePath();
-        crc2.stroke(); 
+        crc2.fill();
+        crc2.stroke();  
     }
     
     function drawFlowerPink (_x: number, _y: number): void {
@@ -133,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
         crc2.fill();
         //Stengel
         crc2.beginPath();
-        crc2.strokeStyle = 
+        crc2.strokeStyle = "#228B22";
         crc2.fillStyle = "#228B22";
         crc2.moveTo(_x, _y);
         crc2.lineTo(_x, _y + 30);
