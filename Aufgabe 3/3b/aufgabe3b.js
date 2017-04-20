@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    let ablage = document.getElementById("discard");
+    let handKarten = document.getElementsByClassName("Handkarten");
     let allCards = ["Karo 7", "Karo 8", "Karo 9", "Karo 10", "Karo Ass", "Karo Bube", "Karo Dame",
         "Herz 7", "Herz 8", "Herz 9", "Herz 10", "Herz Ass", "Herz Bube", "Herz Dame",
         "Pik 7", "Pik 8", "Pik 9", "Pik 10", "Pik Ass", "Pik Bube", "Pik Dame",
@@ -26,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     // ABLAGE 
-    let ablage = document.getElementById("discard");
-    let handKarten = document.getElementsByClassName("Handkarten");
     for (let v = 0; v < handKarten.length; v++) {
         //Karten von Hand in die Ablage
         handKarten[v].addEventListener("click", function (event) {

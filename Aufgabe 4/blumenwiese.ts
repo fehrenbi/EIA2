@@ -188,6 +188,5 @@ document.addEventListener("DOMContentLoaded", function(): void {
         crc2.fill();
         crc2.stroke();   
     }
-    
-    
+ 
 });
