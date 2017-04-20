@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
     }
     
     function drawFlowerPink (_x: number, _y: number): void {
+        //Blüte
         crc2.beginPath();
         crc2.fillStyle = "#FF1493";
         crc2.moveTo(_x, _y);
@@ -130,11 +131,12 @@ document.addEventListener("DOMContentLoaded", function(): void {
         crc2.lineTo(_x - 16, _y - 24);
         crc2.closePath();
         crc2.fill();
+        //Stengel
         crc2.beginPath();
         crc2.strokeStyle = 
         crc2.fillStyle = "#228B22";
         crc2.moveTo(_x, _y);
-        crc2.lineTo(_x, _y + 20);
+        crc2.lineTo(_x, _y + 30);
         crc2.lineTo(_x + 10, _y + 10);
         crc2.lineTo(_x, _y + 15);
         crc2.closePath();
@@ -143,11 +145,25 @@ document.addEventListener("DOMContentLoaded", function(): void {
     }
     
     function drawFlowerRose (_x: number, _y: number): void {
+        //Blüte
         crc2.beginPath();
         crc2.fillStyle = "#FFFF00";
         crc2.arc(_x, _y, 10, 0, Math.PI * 2, true);
         crc2.closePath();
         crc2.fill();
+        //Blütenblätter
+        crc2.beginPath();
+        //Stengel
+        crc2.beginPath();
+        crc2.strokeStyle = 
+        crc2.fillStyle = "#228B22";
+        crc2.moveTo(_x, _y + 10);
+        crc2.lineTo(_x, _y + 40);
+        crc2.lineTo(_x + 10, _y + 20);
+        crc2.lineTo(_x, _y + 30);
+        crc2.closePath();
+        crc2.fill();
+        crc2.stroke();   
     }
     
     
