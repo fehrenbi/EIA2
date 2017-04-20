@@ -145,14 +145,33 @@ document.addEventListener("DOMContentLoaded", function(): void {
     }
     
     function drawFlowerRose (_x: number, _y: number): void {
+        //Blütenblätter
+        crc2.beginPath();
+        crc2.fillStyle = "#FFB5C5";
+        crc2.arc(_x + 10, _y + 10, 10, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "#FFB5C5";
+        crc2.arc(_x + 10, _y - 10, 10, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "#FFB5C5";
+        crc2.arc(_x - 10, _y + 10, 10, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "#FFB5C5";
+        crc2.arc(_x - 10, _y - 10, 10, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
         //Blüte
         crc2.beginPath();
         crc2.fillStyle = "#FFFF00";
         crc2.arc(_x, _y, 10, 0, Math.PI * 2, true);
         crc2.closePath();
         crc2.fill();
-        //Blütenblätter
-        crc2.beginPath();
         //Stengel
         crc2.beginPath();
         crc2.strokeStyle = 
