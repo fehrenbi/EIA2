@@ -29,6 +29,23 @@ document.addEventListener("DOMContentLoaded", function () {
     drawMountain(890, 250, "#BEBEBE");
     drawSun(400, 250);
     drawTree();
+    //Zufällige Blumen setzen
+    for (var n = 0; n < 50; n++) {
+        var zufallBlume = Math.floor((Math.random() * 3) + 0);
+        let _x = (Math.random() * 1150 - 0) + 0;
+        let _y = (Math.random() * 700 - 250) + 250;
+        switch (zufallBlume) {
+            case 0:
+                drawKleeblatt(_x, _y);
+                break;
+            case 1:
+                drawFlowerPink(_x, _y);
+                break;
+            case 2:
+                drawFlowerRose(_x, _y);
+                break;
+        }
+    }
     drawKleeblatt(500, 400);
     drawFlowerPink(600, 400);
     drawFlowerRose(700, 400);
