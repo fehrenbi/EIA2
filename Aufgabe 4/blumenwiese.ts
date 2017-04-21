@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function(): void {
     //Zufällige Blumen setzen
     for (var n: number = 0; n < 50; n++) {
         var zufallBlume: number = Math.floor((Math.random() * 3) + 0);
-        let _x: number = (Math.random() * 1150 - 0) + 0;
-        let _y: number = (Math.random() * 700 - 250) + 250;
+        let _x: number = (Math.random() * (1150 - 150)) + 150;
+        let _y: number = (Math.random() * (700 - 250)) + 250;
         switch (zufallBlume) {
         case 0:
             drawKleeblatt(_x, _y);
