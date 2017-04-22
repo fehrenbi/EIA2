@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return null;
     }
     //Karten von Hand in die Ablage
-    for (let v = 0; v < handKarten.length, v++;) {
+    for (let v = 0; v < handKarten.length; v++) {
         handKarten[v].addEventListener("click", karteAblegen);
     }
     function karteAblegen() {
