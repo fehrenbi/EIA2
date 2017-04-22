@@ -7,7 +7,7 @@ Datum: 20.4.17
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 
-document.addEventListener("DOMContentLoaded", function(): void {
+document.addEventListener("DOMContentLoaded", function(): void { <-- diese anonyme Funktion auch noch vereinzeln 
     
     let allCards: string[] = ["Karo 7", "Karo 8", "Karo 9", "Karo 10", "Karo Ass", "Karo Bube", "Karo Dame",
         "Herz 7", "Herz 8", "Herz 9", "Herz 10", "Herz Ass", "Herz Bube", "Herz Dame",
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
     
     nachziehStapel.addEventListener("click", randomCard);
     
-    function randomCard (): void {
+    function randomCard (): void { <-- event-objekt entgegen nehmen, auch wenn es nicht genutzt wird
             let zufallsKarte: string = allCards.splice(Math.round(Math.random() * (allCards.length - 1)), 1)[0];
             let leerKarte: HTMLDivElement = sucheLeerKarte();
             if (leerKarte != null) {
@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", function(): void {
         handKarten[v].addEventListener("click", karteAblegen);
         }
     
-    function karteAblegen (): void {
-        let karteHand: HTMLDivElement = <HTMLDivElement>event.target;
+    function karteAblegen (): void { <-- hier muss das event-objekt entgegen genommen werden, sonst funktioniert das nicht
+        let karteHand: HTMLDivElement = <HTMLDivElement>event.target; <-- weil es hier genutzt werden soll
         ablage.textContent = karteHand.textContent;
         karteHand.textContent = "";    
     }
