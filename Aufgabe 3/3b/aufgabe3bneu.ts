@@ -17,12 +17,28 @@ document.addEventListener("DOMContentLoaded", function(): void {
     let handKarten: NodeListOf<HTMLDivElement> = <NodeListOf<HTMLDivElement>>document.getElementsByClassName("Handkarten");
     let nachziehStapel: HTMLElement = document.getElementById("deck");
     
-    nachziehStapel.addEventListener("click", zufallskarte);
+    nachziehStapel.addEventListener("click", randomCard);
     
-    function zufallskarte (): void {
-            
-    };
+    function randomCard (): void {
+            let zufallsKarte: string = allCards.splice(Math.round(Math.random() * (allCards.length - 1)), 1)[0];
+            let leerKarte: HTMLDivElement = sucheLeerKarte();
+            if (leerKarte != null) {
+                leerKarte.innerText = zufallsKarte;
+            }
+            if (allCards.length === 0) {
+                nachziehStapel.innerText = "leer";
+                nachziehStapel.style.display = "none";
+            }   
+    }
     
+    function sucheLeerKarte(): HTMLDivElement {
+        for (let i: number = 0; i < handKarten.length; i++) {
+            if (handKarten[i].textContent == "") {
+                return handKarten[i];    
+            }    
+        }
+        return null;
+     }
     
     //Karten von Hand in die Ablage
     
@@ -34,11 +50,6 @@ document.addEventListener("DOMContentLoaded", function(): void {
         let karteHand: HTMLDivElement = <HTMLDivElement>event.target;
         ablage.textContent = karteHand.textContent;
         karteHand.textContent = "";    
-    };
-
-
-
-
-
+    }
 
 });

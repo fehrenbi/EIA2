@@ -14,10 +14,26 @@ document.addEventListener("DOMContentLoaded", function () {
     let ablage = document.getElementById("discard");
     let handKarten = document.getElementsByClassName("Handkarten");
     let nachziehStapel = document.getElementById("deck");
-    nachziehStapel.addEventListener("click", zufallskarte);
-    function zufallskarte() {
+    nachziehStapel.addEventListener("click", randomCard);
+    function randomCard() {
+        let zufallsKarte = allCards.splice(Math.round(Math.random() * (allCards.length - 1)), 1)[0];
+        let leerKarte = sucheLeerKarte();
+        if (leerKarte != null) {
+            leerKarte.innerText = zufallsKarte;
+        }
+        if (allCards.length === 0) {
+            nachziehStapel.innerText = "leer";
+            nachziehStapel.style.display = "none";
+        }
     }
-    ;
+    function sucheLeerKarte() {
+        for (let i = 0; i < handKarten.length; i++) {
+            if (handKarten[i].textContent == "") {
+                return handKarten[i];
+            }
+        }
+        return null;
+    }
     //Karten von Hand in die Ablage
     for (let v = 0; v < handKarten.length, v++;) {
         handKarten[v].addEventListener("click", karteAblegen);
@@ -27,6 +43,5 @@ document.addEventListener("DOMContentLoaded", function () {
         ablage.textContent = karteHand.textContent;
         karteHand.textContent = "";
     }
-    ;
 });
 //# sourceMappingURL=aufgabe3bneu.js.map
