@@ -10,17 +10,18 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 body {
     width: 656px;
 }
-.board {
+.boardwhite {
     height: 80px;
     width: 80px;
     float: left;
-}
-
-.white {
     background: white;
 }
 
-.black {
+
+.boardblack {
+	height: 80px;
+    width: 80px;
+    float: left;
     background: black;   
     color: white;
 }

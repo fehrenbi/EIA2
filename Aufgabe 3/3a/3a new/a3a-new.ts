@@ -18,10 +18,10 @@ namespace aufgabe3a {
             for (var i: number = 0; i < 64; i++) {
                 var element = document.createElement("div");
                 if (((i + zeile) % 2) == 0) {
-                    element.className = "board white";
+                    element.className = "boardwhite";
                     }
                 else {
-                    element.className = "board black";
+                    element.className = "boardblack";
                     }
                 if (((i + zeile) % 8) == 0) {
                     zeile++;
