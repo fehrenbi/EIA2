@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
     
     nachziehStapel.addEventListener("click", randomCard);
     
-    function randomCard (): void {
+    function randomCard (_event: Event): void {
             let zufallsKarte: string = allCards.splice(Math.round(Math.random() * (allCards.length - 1)), 1)[0];
             let leerKarte: HTMLDivElement = sucheLeerKarte();
             if (leerKarte != null) {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
         handKarten[v].addEventListener("click", karteAblegen);
         }
     
-    function karteAblegen (): void {
+    function karteAblegen (_event: Event): void {
         let karteHand: HTMLDivElement = <HTMLDivElement>event.target;
         ablage.textContent = karteHand.textContent;
         karteHand.textContent = "";    

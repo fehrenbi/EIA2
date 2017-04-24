@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let handKarten = document.getElementsByClassName("Handkarten");
     let nachziehStapel = document.getElementById("deck");
     nachziehStapel.addEventListener("click", randomCard);
-    function randomCard() {
+    function randomCard(_event) {
         let zufallsKarte = allCards.splice(Math.round(Math.random() * (allCards.length - 1)), 1)[0];
         let leerKarte = sucheLeerKarte();
         if (leerKarte != null) {
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let v = 0; v < handKarten.length; v++) {
         handKarten[v].addEventListener("click", karteAblegen);
     }
-    function karteAblegen() {
+    function karteAblegen(_event) {
         let karteHand = event.target;
         ablage.textContent = karteHand.textContent;
         karteHand.textContent = "";
