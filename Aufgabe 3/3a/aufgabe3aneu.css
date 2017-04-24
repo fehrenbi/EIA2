@@ -1,0 +1,48 @@
+/*
+Aufgabe 2a
+Name: Luise Fehrenbach
+Matrikel: 254668
+Datum: 31.03.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
+body {
+    width: 656px;
+}
+.board {
+    height: 80px;
+    width: 80px;
+    float: left;
+}
+
+.white {
+    background: white;
+}
+
+.black {
+    background: black;   
+    color: white;
+}
+
+.marked {
+	background-color:maroon;
+	color:white;
+}
+	
+body > div:nth-child(8n+1) {
+			clear: left;
+			;}
+			
+.mouseBox {
+	padding-top:5px; 
+
+border: 1px solid #00b3b3;
+height: 90px;
+width: 110px; 
+background-color: #c2f0f0;
+display:none;
+position: absolute;
+z-index: 1000;
+
+}
