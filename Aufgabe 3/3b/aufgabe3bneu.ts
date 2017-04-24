@@ -7,8 +7,8 @@ Datum: 20.4.17
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 
-namespace aufgabe3b {
 //document.addEventListener("DOMContentLoaded", function(): void {
+namespace aufgabe3b {
 document.addEventListener("DOMContentLoaded", init);
    
    function init (_event: Event): void { 

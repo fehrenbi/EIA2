@@ -6,9 +6,9 @@ Datum: 20.4.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
+//document.addEventListener("DOMContentLoaded", function(): void {
 var aufgabe3b;
 (function (aufgabe3b) {
-    //document.addEventListener("DOMContentLoaded", function(): void {
     document.addEventListener("DOMContentLoaded", init);
     function init(_event) {
         let allCards = ["Karo 7", "Karo 8", "Karo 9", "Karo 10", "Karo Ass", "Karo Bube", "Karo Dame",
