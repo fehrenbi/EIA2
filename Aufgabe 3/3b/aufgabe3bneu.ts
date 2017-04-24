@@ -7,8 +7,11 @@ Datum: 20.4.17
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 
-document.addEventListener("DOMContentLoaded", function(): void {
-    
+namespace aufgabe3b {
+//document.addEventListener("DOMContentLoaded", function(): void {
+document.addEventListener("DOMContentLoaded", init);
+   
+   function init (_event: Event): void { 
     let allCards: string[] = ["Karo 7", "Karo 8", "Karo 9", "Karo 10", "Karo Ass", "Karo Bube", "Karo Dame",
         "Herz 7", "Herz 8", "Herz 9", "Herz 10", "Herz Ass", "Herz Bube", "Herz Dame",
         "Pik 7", "Pik 8", "Pik 9", "Pik 10", "Pik Ass", "Pik Bube", "Pik Dame",
@@ -51,5 +54,5 @@ document.addEventListener("DOMContentLoaded", function(): void {
         ablage.textContent = karteHand.textContent;
         karteHand.textContent = "";    
     }
-
-});
+}
+}
