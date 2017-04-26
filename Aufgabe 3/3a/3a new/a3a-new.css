@@ -2,7 +2,7 @@
 Aufgabe 2a
 Name: Luise Fehrenbach
 Matrikel: 254668
-Datum: 24.04.17
+Datum: 27.04.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
@@ -10,22 +10,33 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 body {
     width: 656px;
 }
-.boardwhite {
+.board {
     height: 80px;
     width: 80px;
+    border: 1px solid black; 
     float: left;
-    background: white;
 }
 
+.white {
+    background: white;
 
-.boardblack {
-	height: 80px;
-    width: 80px;
-    float: left;
+}
+
+.black {
     background: black;   
     color: white;
 }
 
 .selected {
 	background-color: red;
+}
+
+#move {
+	position: absolute;
+	display: inline-block;
+	color: white;
+	
+	padding: 2em, 2em, 2em, 2em;
+	font-family: "Arial";
+	background-color: green;
 }
