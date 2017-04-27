@@ -1,8 +1,8 @@
 /*
-Aufgabe 4
+Aufgabe 5
 Name: Luise Fehrenbach
 Matrikel: 254668
-Datum: 13.4.17
+Datum: 28.4.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
@@ -12,23 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(canvas);
     let crc2;
     crc2 = canvas.getContext("2d");
-    //Blumenwiese
-    crc2.beginPath();
-    crc2.fillStyle = "#32CD32";
-    crc2.rect(0, 0, canvas.width, canvas.height);
-    crc2.fill();
-    crc2.closePath();
-    //Himmel
-    crc2.beginPath();
-    crc2.fillStyle = "#B0E2FF";
-    crc2.rect(0, 0, canvas.width, 250);
-    crc2.fill();
-    crc2.closePath();
+    let x = [];
+    let y = [];
+    let beeAmount = 10;
+    drawMeadow();
+    drawSky();
     drawMountain(1040, 250, "#7D7D7D");
     drawMountain(740, 250, "#7D7D7D");
     drawMountain(890, 250, "#BEBEBE");
-    drawSun(400, 250);
-    drawTree();
+    drawSun();
     //Zufällige Blumen setzen
     for (var n = 0; n < 50; n++) {
         var zufallBlume = Math.floor((Math.random() * 3) + 0);
@@ -46,10 +38,35 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
         }
     }
-    drawKleeblatt(500, 400);
-    drawFlowerPink(600, 400);
-    drawFlowerRose(700, 400);
-    //Funktionen
+    drawTree();
+    drawBeehive();
+    drawObject(130, 385);
+    window.setTimeout(animate, 20);
+    function animate() {
+        for (let i = 0; i < n; i++) {
+            x[i] += Math.random() * 4 - 2;
+            y[i] += Math.random() * 4 - 2;
+            drawObject(x[i], y[i]);
+        }
+        window.setTimeout(animate, 20);
+    }
+    /*********************
+    Funktionen
+    ********************/
+    function drawMeadow() {
+        crc2.beginPath();
+        crc2.fillStyle = "#32CD32";
+        crc2.rect(0, 0, canvas.width, canvas.height);
+        crc2.fill();
+        crc2.closePath();
+    }
+    function drawSky() {
+        crc2.beginPath();
+        crc2.fillStyle = "#B0E2FF";
+        crc2.rect(0, 0, canvas.width, 250);
+        crc2.fill();
+        crc2.closePath();
+    }
     function drawMountain(_x, _y, _fillColor) {
         crc2.beginPath();
         crc2.fillStyle = _fillColor;
@@ -59,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         crc2.closePath();
         crc2.fill();
     }
-    function drawSun(_x, _y) {
+    function drawSun() {
         crc2.beginPath();
         crc2.fillStyle = "#FFFF00";
         crc2.arc(500, 250, 120, 0, Math.PI * 3, true);
@@ -68,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     function drawTree() {
         crc2.beginPath();
-        crc2.fillStyle = "#8B5A2B";
+        crc2.fillStyle = "#CD6839";
         crc2.rect(0, 0, 150, canvas.height);
         crc2.fill();
         crc2.closePath();
@@ -89,6 +106,27 @@ document.addEventListener("DOMContentLoaded", function () {
         crc2.closePath();
         crc2.fill();
     }
+    function drawBeehive() {
+        crc2.beginPath();
+        crc2.fillStyle = "#8B4726";
+        crc2.rect(100, 350, 70, 100);
+        crc2.rect(90, 350, 90, 20);
+        crc2.fill();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.fillStyle = "#000000";
+        crc2.arc(135, 390, 10, 0, Math.PI * 2);
+        crc2.fill();
+        crc2.closePath();
+    }
+    function drawObject(_x, _y) {
+        crc2.beginPath();
+        crc2.fillStyle = "#ffffff";
+        crc2.rect(_x, _y, 10, 10);
+        crc2.fill();
+        crc2.closePath();
+    }
+    //BLUMEN
     function drawKleeblatt(_x, _y) {
         crc2.beginPath();
         crc2.fillStyle = "#228B22";

@@ -7,83 +7,123 @@ Datum: 28.4.17
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 
-document.addEventListener("DOMContentLoaded", function(): void {
+namespace aufgabe5 {
 
-    let canvas: HTMLCanvasElement;
-    canvas = document.getElementsByTagName("canvas")[0];
-    console.log(canvas);
+    window.addEventListener("load", init);
 
     let crc2: CanvasRenderingContext2D;
-    crc2 = canvas.getContext("2d");
-    
-    let x: number[] = [];
-    let y: number[] = [];
-    let beeAmount: number = 10;
+    var x: number[] = [];
+    var y: number[] = [];
+    let amountBees: number = 10;
+    let imgData: ImageData;
 
-    drawMeadow();
-    drawSky();
-    drawMountain(1040, 250, "#7D7D7D");
-    drawMountain(740, 250, "#7D7D7D");
-    drawMountain(890, 250, "#BEBEBE");
-    drawSun();
+    function init(_event: Event): void {
+        let canvas: HTMLCanvasElement;
+        canvas = document.getElementsByTagName("canvas")[0];
+        crc2 = canvas.getContext("2d");
 
-    //Zufällige Blumen setzen
-    for (var n: number = 0; n < 50; n++) {
-        var zufallBlume: number = Math.floor((Math.random() * 3) + 0);
-        let _x: number = (Math.random() * (1150 - 150)) + 150;
-        let _y: number = (Math.random() * (700 - 250)) + 250;
-        switch (zufallBlume) {
-            case 0:
-                drawKleeblatt(_x, _y);
-                break;
-            case 1:
-                drawFlowerPink(_x, _y);
-                break;
-            case 2:
-                drawFlowerRose(_x, _y);
-                break;
+        //Blumenwiese zeichnen
+        drawMeadow();
+        drawSky();
+        drawMountain(1040, 250, "#7D7D7D");
+        drawMountain(740, 250, "#7D7D7D");
+        drawMountain(890, 250, "#BEBEBE");
+        drawSun();
+
+        //Schleife für Malen der Zufallsblumen
+        for (var n: number = 0; n < 50; n++) {
+            var zufallBlume: number = Math.floor((Math.random() * 3) + 0);
+            let _x: number = (Math.random() * (1150 - 150)) + 150;
+            let _y: number = (Math.random() * (700 - 250)) + 250;
+            switch (zufallBlume) {
+                case 0:
+                    drawKleeblatt(_x, _y);
+                    break;
+                case 1:
+                    drawFlowerPink(_x, _y);
+                    break;
+                case 2:
+                    drawFlowerRose(_x, _y);
+                    break;
+            }
         }
+
+        //noch Baum und Bienenkorb malen, damit Blumen dahinter
+        drawTree();
+        drawBeehive();
+        //drawObject(130, 385);
+
+        //gemaltes Bild abspeichern
+        imgData = crc2.getImageData(0, 0, 1150, 700);
+
+        //For-Schleife, Startposition für Bienen in Array abspeichern
+        for (let i: number = 0; i < amountBees; i++) {
+            x[i] = 130;
+            y[i] = 385;
+        }
+
+        //setTimeout(animate)
+        window.setTimeout(animate, 20, canvas.width, canvas.height);
+        //setEventListener
+        canvas.addEventListener("click", newBee);
     }
 
-    
-    drawTree();
-    drawBeehive();
-    
-    drawObject(130, 385);
-    
-    window.setTimeout(animate, 20);
-    
+    //function neue Biene
+    function newBee(): void {
+        x.push(130);
+        y.push(385);
+        amountBees++;
+    }
+
     function animate(): void {
-        for (let i: number = 0; i < n; i++) {
-            x[i] += Math.random() * 4 - 2;
+        //Hintergrundbild aufrufen
+        crc2.putImageData(imgData, 0, 0);
+        //BienenPosition for schleife
+        for (let i: number = 0; i < amountBees; i++) {
+            x[i] += Math.random() * 5 - 2;
             y[i] += Math.random() * 4 - 2;
+            //if Abfrage (Bildrand)
+            if (x[i] > 1150) {
+                x[i] = 0;
+            }
+            if (y[i] > 700) {
+                y[i] = 0;
+            }
+            if (y[i] < 0) {
+                y[i] = 700;
+            }
+            //neue Position
             drawObject(x[i], y[i]);
         }
 
+        //SetTimeout(animate)
         window.setTimeout(animate, 20);
     }
-
     
-
-/*********************
-Funktionen
-********************/
+    //alle Funktionen für Elemente
+    function drawObject(_x: number, _y: number): void {
+        crc2.beginPath();
+        crc2.fillStyle = "#ffffff";
+        crc2.rect(_x, _y, 10, 10);
+        crc2.fill();
+        crc2.closePath();
+    }
     function drawMeadow(): void {
         crc2.beginPath();
         crc2.fillStyle = "#32CD32";
-        crc2.rect(0, 0, canvas.width, canvas.height);
+        //crc2.rect(0, 0, canvas.width, canvas.height);
+        crc2.rect(0, 0, 1150, 700);
         crc2.fill();
         crc2.closePath();
     }
-    
     function drawSky(): void {
         crc2.beginPath();
         crc2.fillStyle = "#B0E2FF";
-        crc2.rect(0, 0, canvas.width, 250);
+        //crc2.rect(0, 0, canvas.width, 250);
+        crc2.rect(0, 0, 1150, 250);
         crc2.fill();
         crc2.closePath();
     }
-    
     function drawMountain(_x: number, _y: number, _fillColor: string): void {
         crc2.beginPath();
         crc2.fillStyle = _fillColor;
@@ -93,7 +133,6 @@ Funktionen
         crc2.closePath();
         crc2.fill();
     }
-
     function drawSun(): void {
         crc2.beginPath();
         crc2.fillStyle = "#FFFF00";
@@ -101,11 +140,11 @@ Funktionen
         crc2.closePath();
         crc2.fill();
     }
-
     function drawTree(): void {
         crc2.beginPath();
         crc2.fillStyle = "#CD6839";
-        crc2.rect(0, 0, 150, canvas.height);
+        //crc2.rect(0, 0, 150, canvas.height);
+        crc2.rect(0, 0, 150, 700);
         crc2.fill();
         crc2.closePath();
 
@@ -139,17 +178,6 @@ Funktionen
         crc2.fill();
         crc2.closePath();
     }
-    
-    function drawObject(_x: number, _y: number): void {
-        crc2.beginPath();
-        crc2.fillStyle = "#ffffff";
-        crc2.rect(_x, _y, 10, 10);
-        crc2.fill();
-        crc2.closePath();
-    }
-
-    //BLUMEN
-
     function drawKleeblatt(_x: number, _y: number): void {
         crc2.beginPath();
         crc2.fillStyle = "#228B22";
@@ -182,7 +210,6 @@ Funktionen
         crc2.fill();
         crc2.stroke();
     }
-
     function drawFlowerPink(_x: number, _y: number): void {
         //Blüte
         crc2.beginPath();
@@ -207,7 +234,6 @@ Funktionen
         crc2.fill();
         crc2.stroke();
     }
-
     function drawFlowerRose(_x: number, _y: number): void {
         //Blütenblätter
         crc2.beginPath();
@@ -248,5 +274,4 @@ Funktionen
         crc2.fill();
         crc2.stroke();
     }
-
-});
+}
