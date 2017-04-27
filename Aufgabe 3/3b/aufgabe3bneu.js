@@ -38,12 +38,12 @@ var aufgabe3b;
             }
             return null;
         }
-        //Karten von Hand in die Ablage
+        //Karten von Hand in die Abl    
         for (let v = 0; v < handKarten.length; v++) {
             handKarten[v].addEventListener("click", karteAblegen);
         }
         function karteAblegen(_event) {
-            let karteHand = event.target;
+            let karteHand = _event.target;
             ablage.textContent = karteHand.textContent;
             karteHand.textContent = "";
         }

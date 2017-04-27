@@ -44,7 +44,7 @@ var chessboard;
         }
     }
     function selectDiv(_event) {
-        var clickedDiv = event.target;
+        var clickedDiv = _event.target;
         if (clickedDiv.classList.toggle("selected")) {
             sum += parseInt(clickedDiv.textContent);
         }

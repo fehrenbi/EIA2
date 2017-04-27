@@ -53,7 +53,7 @@ namespace chessboard {
     }
 
     function selectDiv(_event: Event): void {
-        var clickedDiv: HTMLDivElement = <HTMLDivElement>event.target;
+        var clickedDiv: HTMLDivElement = <HTMLDivElement>_event.target;
         if (clickedDiv.classList.toggle("selected")) {
             sum += parseInt(clickedDiv.textContent);
         }
