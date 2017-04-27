@@ -12,7 +12,7 @@ namespace chessboard {
     window.addEventListener("load", init);
     
     var sum: number = 0;
-    var div;
+    var div: HTMLDivElement;
     
     function init(): void {
         placeDivs();
@@ -46,7 +46,7 @@ namespace chessboard {
     }
     
     function selectDiv(_event: Event): void {
-        var clickedDiv: HTMLDivElement = event.target;
+        var clickedDiv: HTMLDivElement = <HTMLDivElement> event.target;
         if (clickedDiv.classList.toggle("selected")) {
             sum += parseInt(clickedDiv.textContent);
         }
@@ -54,9 +54,10 @@ namespace chessboard {
             sum -= parseInt(clickedDiv.textContent);
         }
     }
-    function updateReis(_event: Event): void {
-        div.style.top = event.clientY + 10 + "px";
-        div.style.left = event.clientX + 10 + "px";
+    function updateReis(_event: MouseEvent): void {
+        
+        div.style.top = _event.clientY + 10 + "px";
+        div.style.left = _event.clientX + 10 + "px";
         div.textContent = "Dezimalsystem: = " + sum + " Hexadezimalsystem: = " + sum.toString(16);
     }
     
