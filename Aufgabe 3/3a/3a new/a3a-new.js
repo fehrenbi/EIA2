@@ -16,29 +16,32 @@ var chessboard;
     }
     function placeDivs() {
         var reis = 1;
-        var zeile = 0;
-        for (var i = 0; i < 64; i++) {
-            var element = document.createElement("div");
-            if (i < 8) {
-                element.addEventListener("click", selectDiv);
+        for (var i = 0; i < 8; i++) {
+            for (let j = 0; j < 8; j++) {
+                console.log("i:" + i + " j: " + j);
+                console.log("i % 2: " + i % 2);
+                console.log("j % 2: " + j % 2);
+                console.log(i % 2 == j % 2);
+                console.log("-------------------");
+                var element = document.createElement("div");
+                if (i < 8) {
+                    element.addEventListener("click", selectDiv);
+                }
+                if (i % 2 == j % 2) {
+                    element.className = "board white";
+                }
+                else {
+                    element.className = "board black";
+                }
+                element.innerText = " " + reis;
+                reis *= 2;
+                document.body.appendChild(element);
             }
-            if (((i + zeile) % 2) == 0) {
-                element.className = "board white";
-            }
-            else {
-                element.className = "board black";
-            }
-            if (((i + zeile) % 8) == 0) {
-                zeile++;
-            }
-            element.innerText = " " + rice;
-            rice *= 2;
-            document.body.appendChild(element);
+            div = document.createElement("div");
+            div.id = "move";
+            document.addEventListener("mousemove", updateReis);
+            document.body.appendChild(div);
         }
-        div = document.createElement("div");
-        div.id = "move";
-        document.addEventListener("mousemove", updateReis);
-        document.body.appendChild(div);
     }
     function selectDiv(_event) {
         var clickedDiv = event.target;
