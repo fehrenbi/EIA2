@@ -69,7 +69,7 @@ var aufgabe5;
         crc2.putImageData(imgData, 0, 0);
         //BienenPosition for schleife
         for (let i = 0; i < amountBees; i++) {
-            x[i] += Math.random() * 5 - 2;
+            x[i] += Math.random() * 5 - 2.2;
             y[i] += Math.random() * 4 - 2;
             //if Abfrage (Bildrand)
             if (x[i] > 1150) {
@@ -82,16 +82,31 @@ var aufgabe5;
                 y[i] = 700;
             }
             //neue Position
-            drawObject(x[i], y[i]);
+            drawBee(x[i], y[i]);
         }
         //SetTimeout(animate)
         window.setTimeout(animate, 20);
     }
     //alle Funktionen für Elemente
-    function drawObject(_x, _y) {
+    function drawBee(_x, _y) {
         crc2.beginPath();
-        crc2.fillStyle = "#ffffff";
-        crc2.rect(_x, _y, 10, 10);
+        crc2.fillStyle = "#C6E2FF";
+        crc2.arc(_x - 4, _y - 7, 10, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.fillStyle = "#000000";
+        crc2.rect(_x - 10, _y, 10, 10);
+        crc2.fill();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.fillStyle = "#ffff00";
+        crc2.arc(_x, _y, 10, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.fillStyle = "#000000";
+        crc2.arc(_x + 2, _y - 2, 2, 0, 2 * Math.PI);
         crc2.fill();
         crc2.closePath();
     }
