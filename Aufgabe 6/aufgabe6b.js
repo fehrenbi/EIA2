@@ -29,7 +29,32 @@ var StudiVZ;
         }
     }
     function saveData(_input) {
-        return "Hier fehlt noch der richtige Code...";
+        //let studi: StudentData [] = [];
+        let strings = _input.split(",");
+        console.log(strings);
+        let matrikelTmp = parseInt(strings[0]);
+        let nameTmp = strings[1];
+        let vornameTmp = strings[2];
+        let alterTmp = parseInt(strings[3]);
+        let sexTmp;
+        if (parseInt(strings[4]) == 1) {
+            sexTmp = true;
+        }
+        else {
+            sexTmp = false;
+        }
+        let commentTmp = strings[5];
+        let newStudent = {
+            matrikelnr: matrikelTmp,
+            name: nameTmp,
+            vorname: vornameTmp,
+            alter: alterTmp,
+            sex: sexTmp,
+            comment: commentTmp
+        };
+        console.log(newStudent);
+        students.push(newStudent);
+        return "Student " + newStudent.name + " wurde eingetragen";
     }
     function queryData(_matrikel) {
         return "Hier fehlt noch der richtige Code...";
