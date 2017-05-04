@@ -35,4 +35,4 @@ var StudiVZ;
         return "Hier fehlt noch der richtige Code...";
     }
 })(StudiVZ || (StudiVZ = {}));
-//# sourceMappingURL=aufgabe6.js.map
+//# sourceMappingURL=aufgabe6b.js.map
