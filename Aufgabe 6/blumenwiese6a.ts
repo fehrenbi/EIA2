@@ -67,8 +67,10 @@ namespace aufgabe5 {
 
         //For-Schleife, Startposition für Bienen in Array abspeichern
         for (let i: number = 0; i < amountBees; i++) {
-            allBees[i].x = 130;
-            allBees[i].y = 385;
+            let b: Bee = {x: 0, y: 0, color: "yellow", size: true };
+            b.x = 130;
+            b.y = 385;
+            allBees[i] = b; 
         }
 
         //setTimeout(animate)
