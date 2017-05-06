@@ -10,12 +10,21 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 namespace aufgabe5 {
 
     window.addEventListener("load", init);
+    
+    interface Bee {
+        x: number;
+        y: number;
+        color: string;
+        size: boolean;
+    }
 
     let crc2: CanvasRenderingContext2D;
-    var x: number[] = [];
-    var y: number[] = [];
+    //var x: number[] = [];
+    //var y: number[] = [];
     let amountBees: number = 10;
     let imgData: ImageData;
+    
+    let allBees: Bee[] = [];
 
     function init(_event: Event): void {
         let canvas: HTMLCanvasElement;
@@ -58,8 +67,8 @@ namespace aufgabe5 {
 
         //For-Schleife, Startposition für Bienen in Array abspeichern
         for (let i: number = 0; i < amountBees; i++) {
-            x[i] = 130;
-            y[i] = 385;
+            allBees[i].x = 130;
+            allBees[i].y = 385;
         }
 
         //setTimeout(animate)
@@ -69,10 +78,32 @@ namespace aufgabe5 {
     }
 
     //function neue Biene
-    function newBee(): void {
+    /*#function newBee(): void {
         x.push(130);
         y.push(385);
         amountBees++;
+    }*/
+    function newBee(): void {
+        let b: Bee = {x: 130, y: 385, color: "blue", size: false};
+        switch (Math.floor((Math.random() * 4) + 1)) {
+            case 1:
+                b.color = "blue";
+                break;
+            case 2:
+                b.color = "green";
+                break;
+            case 3: 
+                b.color = "red";
+                break;
+            case 4:
+                b.color = "yellow";
+                break;
+        }
+        if (Math.floor(Math.random() * 2) == 1) {
+            b.size = true;
+        }
+        else {b.size = false; }
+        allBees.push(b);
     }
 
     function animate(): void {
@@ -80,20 +111,20 @@ namespace aufgabe5 {
         crc2.putImageData(imgData, 0, 0);
         //BienenPosition for schleife
         for (let i: number = 0; i < amountBees; i++) {
-            x[i] += Math.random() * 5 - 2.2;
-            y[i] += Math.random() * 4 - 2;
+            allBees[i].x += Math.random() * 5 - 2.2;
+            allBees[i].y += Math.random() * 4 - 2;
             //if Abfrage (Bildrand)
-            if (x[i] > 1150) {
-                x[i] = 0;
+            if (allBees[i].x > 1150) {
+                allBees[i].x = 0;
             }
-            if (y[i] > 700) {
-                y[i] = 0;
+            if (allBees[i].y > 700) {
+                allBees[i].y = 0;
             }
-            if (y[i] < 0) {
-                y[i] = 700;
+            if (allBees[i].y < 0) {
+                allBees[i].y = 700;
             }
             //neue Position
-            drawBee(x[i], y[i]);
+            drawBee(allBees[i].x, allBees[i].y);
         }
 
         //SetTimeout(animate)

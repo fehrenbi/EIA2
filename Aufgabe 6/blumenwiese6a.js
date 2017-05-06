@@ -10,10 +10,11 @@ var aufgabe5;
 (function (aufgabe5) {
     window.addEventListener("load", init);
     let crc2;
-    var x = [];
-    var y = [];
+    //var x: number[] = [];
+    //var y: number[] = [];
     let amountBees = 10;
     let imgData;
+    let allBees = [];
     function init(_event) {
         let canvas;
         canvas = document.getElementsByTagName("canvas")[0];
@@ -50,8 +51,8 @@ var aufgabe5;
         imgData = crc2.getImageData(0, 0, 1150, 700);
         //For-Schleife, Startposition für Bienen in Array abspeichern
         for (let i = 0; i < amountBees; i++) {
-            x[i] = 130;
-            y[i] = 385;
+            allBees[i].x = 130;
+            allBees[i].y = 385;
         }
         //setTimeout(animate)
         window.setTimeout(animate, 20, canvas.width, canvas.height);
@@ -59,30 +60,54 @@ var aufgabe5;
         canvas.addEventListener("click", newBee);
     }
     //function neue Biene
-    function newBee() {
+    /*#function newBee(): void {
         x.push(130);
         y.push(385);
         amountBees++;
+    }*/
+    function newBee() {
+        let b = { x: 130, y: 385, color: "blue", size: false };
+        switch (Math.floor((Math.random() * 4) + 1)) {
+            case 1:
+                b.color = "blue";
+                break;
+            case 2:
+                b.color = "green";
+                break;
+            case 3:
+                b.color = "red";
+                break;
+            case 4:
+                b.color = "yellow";
+                break;
+        }
+        if (Math.floor(Math.random() * 2) == 1) {
+            b.size = true;
+        }
+        else {
+            b.size = false;
+        }
+        allBees.push(b);
     }
     function animate() {
         //Hintergrundbild aufrufen
         crc2.putImageData(imgData, 0, 0);
         //BienenPosition for schleife
         for (let i = 0; i < amountBees; i++) {
-            x[i] += Math.random() * 5 - 2.2;
-            y[i] += Math.random() * 4 - 2;
+            allBees[i].x += Math.random() * 5 - 2.2;
+            allBees[i].y += Math.random() * 4 - 2;
             //if Abfrage (Bildrand)
-            if (x[i] > 1150) {
-                x[i] = 0;
+            if (allBees[i].x > 1150) {
+                allBees[i].x = 0;
             }
-            if (y[i] > 700) {
-                y[i] = 0;
+            if (allBees[i].y > 700) {
+                allBees[i].y = 0;
             }
-            if (y[i] < 0) {
-                y[i] = 700;
+            if (allBees[i].y < 0) {
+                allBees[i].y = 700;
             }
             //neue Position
-            drawBee(x[i], y[i]);
+            drawBee(allBees[i].x, allBees[i].y);
         }
         //SetTimeout(animate)
         window.setTimeout(animate, 20);
