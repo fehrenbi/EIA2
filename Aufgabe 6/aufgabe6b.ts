@@ -70,10 +70,23 @@ namespace StudiVZ {
         
         students.push(newStudent);
         
-        return "Student " + newStudent.name + " wurde eingetragen";
+        return "Student" + newStudent.vorname + newStudent.name + " wurde eingetragen";
     }
     function queryData(_matrikel: number): string {
-        
-        return "Hier fehlt noch der richtige Code...";
+        for (let i: number = 0; i < students.length; i++) {
+            if (students[i].matrikelnr == _matrikel) {
+                let geschlecht: string;
+                if (students[i].sex == true) {
+                    geschlecht = "w";
+                }
+                else {
+                    geschlecht = "m";
+                }
+                return "Folgende Daten sind unter dieser Matrikelnr. eingespeichert: \nName: " + students[i].name + "\nVorname: " + students[i].vorname + "\nAlter: " + students[i].alter + "\nGeschlecht: " + students[i].sex + "\nKommentar: " + students[i].comment;
+            } 
+            else {
+                return "Die eingegebene Matrikelnr ist nicht eingespeichert";
+            }
+        }
     }
 }
