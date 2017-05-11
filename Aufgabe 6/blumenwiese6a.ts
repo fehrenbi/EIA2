@@ -70,7 +70,7 @@ namespace aufgabe5 {
             let b: Bee = {x: 0, y: 0, color: "yellow", size: true };
             b.x = 130;
             b.y = 385;
-            allBees[i] = b; 
+            allBees.push(b); 
         }
 
         //setTimeout(animate)
@@ -112,7 +112,7 @@ namespace aufgabe5 {
         //Hintergrundbild aufrufen
         crc2.putImageData(imgData, 0, 0);
         //BienenPosition for schleife
-        for (let i: number = 0; i < amountBees; i++) {
+        for (let i: number = 0; i < allBees.length; i++) {
             allBees[i].x += Math.random() * 5 - 2.2;
             allBees[i].y += Math.random() * 4 - 2;
             //if Abfrage (Bildrand)
@@ -126,7 +126,7 @@ namespace aufgabe5 {
                 allBees[i].y = 700;
             }
             //neue Position
-            drawBee(allBees[i].x, allBees[i].y);
+            drawBee(allBees[i].x, allBees[i].y, allBees[i].color);
         }
 
         //SetTimeout(animate)
@@ -134,7 +134,7 @@ namespace aufgabe5 {
     }
     
     //alle Funktionen für Elemente
-    function drawBee(_x: number, _y: number): void {
+    function drawBee(_x: number, _y: number, _color: string): void {
         crc2.beginPath();
         crc2.fillStyle = "#C6E2FF";
         crc2.arc(_x - 4, _y - 7, 10, 0, 2 * Math.PI);
@@ -146,7 +146,7 @@ namespace aufgabe5 {
         crc2.fill();
         crc2.closePath();
         crc2.beginPath();
-        crc2.fillStyle = "#ffff00";
+        crc2.fillStyle = _color; //"#ffff00";
         crc2.arc(_x, _y, 10, 0, 2 * Math.PI);
         crc2.fill();
         crc2.closePath();
