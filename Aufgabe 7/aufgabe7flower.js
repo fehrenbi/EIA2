@@ -1,18 +1,24 @@
+/*
+Aufgabe 7
+Name: Luise Fehrenbach
+Matrikel: 254668
+Datum: 12.5.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
 var aufgabe7;
 (function (aufgabe7) {
     class Flower {
-        /* constructor () {
-             this.x = _x;
-             this.y = _y;
-             this.sorte = _sorte;
-         }*/
-        setRandomPosition() {
-            this.x = (Math.random() * (1150 - 150)) + 150;
-            this.y = (Math.random() * (700 - 250)) + 250;
+        constructor(_x, _y, _sorte) {
+            this.x = _x;
+            this.y = _y;
+            this.sorte = _sorte;
         }
         setRandomFlower() {
             for (var n = 0; n < 50; n++) {
                 var zufallBlume = Math.floor((Math.random() * 3) + 0);
+                this.x = (Math.random() * (1150 - 150)) + 150;
+                this.y = (Math.random() * (700 - 250)) + 250;
                 switch (zufallBlume) {
                     case 0:
                         this.drawKleeblatt();
@@ -139,4 +145,4 @@ var aufgabe7;
     }
     aufgabe7.Flower = Flower;
 })(aufgabe7 || (aufgabe7 = {}));
-//# sourceMappingURL=Flower.js.map
+//# sourceMappingURL=aufgabe7flower.js.map

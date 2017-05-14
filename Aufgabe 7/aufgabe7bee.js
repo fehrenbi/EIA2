@@ -6,8 +6,8 @@ Datum: 12.5.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
-var new7;
-(function (new7) {
+var aufgabe7;
+(function (aufgabe7) {
     class Bee {
         //size: boolean;
         constructor(_x, _y) {
@@ -21,26 +21,26 @@ var new7;
             this.setRandomColor();
         }
         drawBee() {
-            new7.crc2.beginPath();
-            new7.crc2.fillStyle = "#C6E2FF";
-            new7.crc2.arc(this.x - 4, this.y - 7, 10, 0, 2 * Math.PI);
-            new7.crc2.fill();
-            new7.crc2.closePath();
-            new7.crc2.beginPath();
-            new7.crc2.fillStyle = "#000000";
-            new7.crc2.rect(this.x - 10, this.y, 10, 10);
-            new7.crc2.fill();
-            new7.crc2.closePath();
-            new7.crc2.beginPath();
-            new7.crc2.fillStyle = this.color; //"#ffff00";
-            new7.crc2.arc(this.x, this.y, 10, 0, 2 * Math.PI);
-            new7.crc2.fill();
-            new7.crc2.closePath();
-            new7.crc2.beginPath();
-            new7.crc2.fillStyle = "#000000";
-            new7.crc2.arc(this.x + 2, this.y - 2, 2, 0, 2 * Math.PI);
-            new7.crc2.fill();
-            new7.crc2.closePath();
+            aufgabe7.crc2.beginPath();
+            aufgabe7.crc2.fillStyle = "#C6E2FF";
+            aufgabe7.crc2.arc(this.x - 4, this.y - 7, 10, 0, 2 * Math.PI);
+            aufgabe7.crc2.fill();
+            aufgabe7.crc2.closePath();
+            aufgabe7.crc2.beginPath();
+            aufgabe7.crc2.fillStyle = "#000000";
+            aufgabe7.crc2.rect(this.x - 10, this.y, 10, 10);
+            aufgabe7.crc2.fill();
+            aufgabe7.crc2.closePath();
+            aufgabe7.crc2.beginPath();
+            aufgabe7.crc2.fillStyle = this.color; //"#ffff00";
+            aufgabe7.crc2.arc(this.x, this.y, 10, 0, 2 * Math.PI);
+            aufgabe7.crc2.fill();
+            aufgabe7.crc2.closePath();
+            aufgabe7.crc2.beginPath();
+            aufgabe7.crc2.fillStyle = "#000000";
+            aufgabe7.crc2.arc(this.x + 2, this.y - 2, 2, 0, 2 * Math.PI);
+            aufgabe7.crc2.fill();
+            aufgabe7.crc2.closePath();
         }
         move() {
             this.x += Math.random() * 5 - 2.2;
@@ -72,6 +72,6 @@ var new7;
             }
         }
     }
-    new7.Bee = Bee;
-})(new7 || (new7 = {}));
-//# sourceMappingURL=new7bee.js.map
+    aufgabe7.Bee = Bee;
+})(aufgabe7 || (aufgabe7 = {}));
+//# sourceMappingURL=aufgabe7bee.js.map

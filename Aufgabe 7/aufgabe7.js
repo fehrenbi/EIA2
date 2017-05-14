@@ -152,4 +152,4 @@ var new7;
         new7.crc2.closePath();
     }
 })(new7 || (new7 = {}));
-//# sourceMappingURL=new7.js.map
+//# sourceMappingURL=aufgabe7.js.map

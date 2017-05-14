@@ -7,7 +7,7 @@ Datum: 12.5.17
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 
-namespace new7 {
+namespace aufgabe7 {
     export class Bee {
         x: number;
         y: number;
