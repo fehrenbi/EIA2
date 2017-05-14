@@ -1,22 +1,28 @@
-namespace aufgabe7 {
+/*
+Aufgabe 7
+Name: Luise Fehrenbach
+Matrikel: 254668
+Datum: 12.5.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
+namespace new7 {
     export class Flower {
         x: number;
         y: number;
         sorte: string;
         
-       /* constructor () {
+        constructor (_x: number, _y: number, _sorte: string) {
             this.x = _x;
             this.y = _y;
             this.sorte = _sorte;
-        }*/
-        setRandomPosition(): void {
-            this.x = (Math.random() * (1150 - 150)) + 150;
-            this.y = (Math.random() * (700 - 250)) + 250;
         }
         setRandomFlower(): void {
             for (var n: number = 0; n < 50; n++) {
                 var zufallBlume: number = Math.floor((Math.random() * 3) + 0);
-                
+                this.x = (Math.random() * (1150 - 150)) + 150;
+                this.y = (Math.random() * (700 - 250)) + 250;
                 switch (zufallBlume) {
                     case 0:
                         this.drawKleeblatt();
@@ -143,3 +149,4 @@ namespace aufgabe7 {
         }
     }
 }
+    
