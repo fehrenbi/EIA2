@@ -39,12 +39,15 @@ namespace aufgabe8 {
             switch (zufallBlume) {
                 case 0:
                     let r: FlowerRose = new FlowerRose(x, y);
+                    r.draw();
                     break;
                 case 1:
                     let p: FlowerPink = new FlowerPink(x, y);
+                    p.draw();
                     break;
                 case 2:
                     let k: Kleeblatt = new Kleeblatt(x, y);
+                    k.draw();
                     break;
             }
         }

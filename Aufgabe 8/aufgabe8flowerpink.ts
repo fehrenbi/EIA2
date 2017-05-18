@@ -12,10 +12,10 @@ namespace aufgabe8 {
 
         constructor(_x: number, _y: number) {
             super(_x, _y, "");
-            console.log("FlowerRose");
+            console.log("FlowerPink");
         }
 
-        drawFlowerPink(): void {
+        draw(): void {
             //Blüte
             crc2.beginPath();
             crc2.fillStyle = "#FF1493";

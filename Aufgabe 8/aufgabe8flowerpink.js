@@ -11,9 +11,9 @@ var aufgabe8;
     class FlowerPink extends aufgabe8.Flower {
         constructor(_x, _y) {
             super(_x, _y, "");
-            console.log("FlowerRose");
+            console.log("FlowerPink");
         }
-        drawFlowerPink() {
+        draw() {
             //Blüte
             aufgabe8.crc2.beginPath();
             aufgabe8.crc2.fillStyle = "#FF1493";

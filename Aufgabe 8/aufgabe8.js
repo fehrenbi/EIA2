@@ -33,12 +33,15 @@ var aufgabe8;
             switch (zufallBlume) {
                 case 0:
                     let r = new aufgabe8.FlowerRose(x, y);
+                    r.draw();
                     break;
                 case 1:
                     let p = new aufgabe8.FlowerPink(x, y);
+                    p.draw();
                     break;
                 case 2:
                     let k = new aufgabe8.Kleeblatt(x, y);
+                    k.draw();
                     break;
             }
         }
