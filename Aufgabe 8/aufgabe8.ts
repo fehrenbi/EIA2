@@ -61,7 +61,9 @@ namespace aufgabe8 {
         
         //Array
         for (let i: number = 0; i < 5; i++) {
-            let f: Flower = new Flower(x, y, "");
+            var x: number = (Math.random() * (1150 - 150)) + 150;
+            var y: number = (Math.random() * (700 - 250)) + 250;
+            let f: Flower = new FlowerRose(x, y);
             f.draw();
             flowers.push(f);
         }
@@ -73,7 +75,6 @@ namespace aufgabe8 {
         //neue Biene erstellen
         for (let i: number = 0; i < amountBees; i++) {
             let b: Bee = new Bee(130, 385);
-            allBees[i] = b;
             allBees.push(b);
         }
         //honeybees erstellen

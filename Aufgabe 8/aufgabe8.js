@@ -53,7 +53,9 @@ var aufgabe8;
         //drawObject(130, 385);
         //Array
         for (let i = 0; i < 5; i++) {
-            let f = new aufgabe8.Flower(x, y, "");
+            var x = (Math.random() * (1150 - 150)) + 150;
+            var y = (Math.random() * (700 - 250)) + 250;
+            let f = new aufgabe8.FlowerRose(x, y);
             f.draw();
             aufgabe8.flowers.push(f);
         }
@@ -63,7 +65,6 @@ var aufgabe8;
         //neue Biene erstellen
         for (let i = 0; i < amountBees; i++) {
             let b = new aufgabe8.Bee(130, 385);
-            allBees[i] = b;
             allBees.push(b);
         }
         //honeybees erstellen

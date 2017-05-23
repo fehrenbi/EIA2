@@ -1,0 +1,101 @@
+<!--  
+Aufgabe 9
+Name: Luise Fehrenbach
+Matrikel: 254668
+Datum: 23.5.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Jetzt online Eis bestellen!</title>
+	<link rel="stylesheet" href="eisdiele.css" type="text/css" media="screen"/>
+	<script src="eisdiele.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+<fieldset id="">
+	<legend> Wähle dein Eis </legend>
+	
+		<input type="radio" name="sorte" value="radio1" id="radio1" />
+		<label for="radio1">Kugel(n) Eis</label>
+		<input type="radio" name="sorte" value="radio2" id="radio2"/>
+		<label for="radio2">Spagetthi-Eis</label>
+		<input type="radio" name="sorte" value="radio1" id="radio1" />
+		<label for="radio1">Eis-Schokolade/-Kaffee</label>
+		<input type="radio" name="sorte" value="radio2" id="radio2"/>
+		<label for="radio2">Milch-Shake</label>
+		<br/>
+		<br/>
+</fieldset>
+
+<fieldset id="">
+	<legend> Wähle deine Toppings </legend>
+	
+		<input type="checkbox" name="Checkbox1" value="check1" id="check1"/>
+		<label for="check1">Sahne</label>
+		</br>
+		<input type="checkbox" name="Checkbox1" value="check2" id="check2"/>
+		<label for="check2">Streusel</label>
+		</br>
+		<input type="checkbox" name="Checkbox1" value="check3" id="check3"/>
+		<label for="check3">Krokant</label>
+		</br>
+		<input type="checkbox" name="Checkbox1" value="check4" id="check4"/>
+		<label for="check4">Smarties</label>
+		</br>
+		<input type="checkbox" name="Checkbox1" value="check5" id="check5"/>
+		<label for="check5">Frische Früchte der Saison</label>
+		</br>
+		<input type="checkbox" name="Checkbox1" value="check6" id="check6"/>
+		<label for="check6">Schokoladen-Soße</label>
+		</br>
+		<input type="checkbox" name="Checkbox1" value="check7" id="check7"/>
+		<label for="check7">Erdbeer-Soße</label>
+		</br>
+		<input type="checkbox" name="Checkbox1" value="check8" id="check8"/>
+		<label for="check8">Sirup</label>
+		</hr>
+		
+		</br>
+		Menge 		
+		<input type="range" name="Slider" min="0" max="1" step="0.25" value="0"/>
+
+</fieldset>
+
+<fieldset id="">
+	<legend> Deine Daten </legend>
+		<input type="radio" name="sex" value="radio1" id="radio1" />
+		<label for="radio1">Frau</label>
+		<input type="radio" name="sex" value="radio2" id="radio2"/>
+		<label for="radio2">Herr</label>
+		<br/>
+		
+		<input type="text" name="Name" placeholder="Vorname" required/>
+		<input type="text" name="Name" placeholder="Nachname" required/>
+		</br>
+		<input type="text" name="Straße" placeholder="Straße" required/>
+		<input type="text" name="Hausnummer" placeholder="Hausnr." required/>
+		</br>
+		<input type="text" name="PLZ" pattern="[0-9]{5}" placeholder="PLZ"/>
+		<input type="text" name="Ort" placeholder="Stadt" required/>
+		<hr/>
+		Wählen Sie Ihre Zahlungsart
+		<select name="Zahlungsart" id="Zahlungsart">
+			<option value="option1">Bar bei Lieferung</option>
+			<option value="option2">auf Rechnung</option>
+			<option value="option3">Paypal</option>
+			<option value="option4">Aufschreiben lassen</option>
+		</select>
+		</br>
+	
+		Jetzt verbindlich bestellen!
+		<button name="Button" type="button">Yes!</button>
+</fieldset>
+
+</body>
+
+</html>
