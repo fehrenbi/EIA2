@@ -55,7 +55,7 @@ namespace aufgabe8 {
             }
             
             if (d < 1) {
-                //
+                this.setRandomTarget();
             }
         }
 

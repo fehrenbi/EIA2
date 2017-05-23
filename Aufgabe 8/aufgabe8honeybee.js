@@ -47,6 +47,7 @@ var aufgabe8;
                 this.y += yDiff * this.speed;
             }
             if (d < 1) {
+                this.setRandomTarget();
             }
         }
         setRandomColor() {

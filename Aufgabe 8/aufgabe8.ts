@@ -60,7 +60,7 @@ namespace aufgabe8 {
         //drawObject(130, 385);
         
         //Array
-        for (let i: number = 0; i < 5; i++) {
+        for (let i: number = 0; i < 20; i++) {
             var x: number = (Math.random() * (1150 - 150)) + 150;
             var y: number = (Math.random() * (700 - 250)) + 250;
             let f: Flower = new FlowerRose(x, y);

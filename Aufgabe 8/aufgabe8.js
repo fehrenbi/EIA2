@@ -52,7 +52,7 @@ var aufgabe8;
         drawBeehive();
         //drawObject(130, 385);
         //Array
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 20; i++) {
             var x = (Math.random() * (1150 - 150)) + 150;
             var y = (Math.random() * (700 - 250)) + 250;
             let f = new aufgabe8.FlowerRose(x, y);
