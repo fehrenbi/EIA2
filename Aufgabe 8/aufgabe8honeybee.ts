@@ -5,6 +5,8 @@ Matrikel: 254668
 Datum: 18.5.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+
+Anmerkung: Hilfe bei move-Methode von Lisa Meister
 */
 
 namespace aufgabe8 {
