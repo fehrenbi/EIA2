@@ -12,7 +12,7 @@ namespace aufgabe8 {
 
         constructor(_x: number, _y: number) {
             super(_x, _y, "");
-            console.log("FlowerRose");
+            console.log("create FlowerRose");
         }
         
         draw(): void {

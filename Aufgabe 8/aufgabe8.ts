@@ -13,7 +13,9 @@ namespace aufgabe8 {
 
     export let crc2: CanvasRenderingContext2D;
     let allBees: Bee[] = [];
-    let flowers: Flower[] = [];
+    let xTarget: number;
+    let yTarget: number;
+    export let flowers: Flower[] = [];
     let amountBees: number = 10;
     let imgData: ImageData;
     export let sorts: string[] = ["Kleeblatt", "Pink", "Rose"];
@@ -58,11 +60,12 @@ namespace aufgabe8 {
         //drawObject(130, 385);
         
         //Array
-        /*for (let i: number = 0; i < 5; i++) {
-            flower.drawFlowerRose();
-            flowers.push(flower);
+        for (let i: number = 0; i < 5; i++) {
+            let f: Flower = new Flower(x, y, "");
+            f.draw();
+            flowers.push(f);
         }
-        console.log("Blumen-Array: " + flower);*/
+        console.log("Blumen-Array: " + flowers);
            
         //gemaltes Bild abspeichern
         imgData = crc2.getImageData(0, 0, 1150, 700);       
@@ -71,8 +74,14 @@ namespace aufgabe8 {
         for (let i: number = 0; i < amountBees; i++) {
             let b: Bee = new Bee(130, 385);
             allBees[i] = b;
+            allBees.push(b);
         }
-
+        //honeybees erstellen
+        for (let i: number = 0; i < 5; i++) {
+            let h: Honeybee = new Honeybee(130, 385, "", xTarget, yTarget);
+            allBees.push(h);
+        }
+        console.log("Bienen-Array: " + allBees);
 
         //setTimeout(animate)
         window.setTimeout(animate, 20);

@@ -11,7 +11,7 @@ var aufgabe8;
     class FlowerPink extends aufgabe8.Flower {
         constructor(_x, _y) {
             super(_x, _y, "");
-            console.log("FlowerPink");
+            console.log("create FlowerPink");
         }
         draw() {
             //Blüte

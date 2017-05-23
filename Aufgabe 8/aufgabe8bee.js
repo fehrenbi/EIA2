@@ -9,9 +9,8 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 var aufgabe8;
 (function (aufgabe8) {
     class Bee {
-        //size: boolean;
         constructor(_x, _y) {
-            console.log("Ich bin der constructor");
+            console.log("Ich bin der constructor Bee");
             this.x = _x;
             this.y = _y;
         }

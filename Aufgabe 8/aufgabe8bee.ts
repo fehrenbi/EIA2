@@ -12,10 +12,9 @@ namespace aufgabe8 {
         x: number;
         y: number;
         color: string;
-        //size: boolean;
         
         constructor (_x: number, _y: number) {
-            console.log("Ich bin der constructor");
+            console.log("Ich bin der constructor Bee");
             this.x = _x;
             this.y = _y;
         }

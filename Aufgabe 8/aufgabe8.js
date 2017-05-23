@@ -10,7 +10,9 @@ var aufgabe8;
 (function (aufgabe8) {
     window.addEventListener("load", init);
     let allBees = [];
-    let flowers = [];
+    let xTarget;
+    let yTarget;
+    aufgabe8.flowers = [];
     let amountBees = 10;
     let imgData;
     aufgabe8.sorts = ["Kleeblatt", "Pink", "Rose"];
@@ -50,18 +52,26 @@ var aufgabe8;
         drawBeehive();
         //drawObject(130, 385);
         //Array
-        /*for (let i: number = 0; i < 5; i++) {
-            flower.drawFlowerRose();
-            flowers.push(flower);
+        for (let i = 0; i < 5; i++) {
+            let f = new aufgabe8.Flower(x, y, "");
+            f.draw();
+            aufgabe8.flowers.push(f);
         }
-        console.log("Blumen-Array: " + flower);*/
+        console.log("Blumen-Array: " + aufgabe8.flowers);
         //gemaltes Bild abspeichern
         imgData = aufgabe8.crc2.getImageData(0, 0, 1150, 700);
         //neue Biene erstellen
         for (let i = 0; i < amountBees; i++) {
             let b = new aufgabe8.Bee(130, 385);
             allBees[i] = b;
+            allBees.push(b);
         }
+        //honeybees erstellen
+        for (let i = 0; i < 5; i++) {
+            let h = new aufgabe8.Honeybee(130, 385, "", xTarget, yTarget);
+            allBees.push(h);
+        }
+        console.log("Bienen-Array: " + allBees);
         //setTimeout(animate)
         window.setTimeout(animate, 20);
         //setEventListener
