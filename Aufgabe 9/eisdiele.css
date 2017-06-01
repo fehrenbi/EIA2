@@ -6,18 +6,51 @@ Datum: 23.5.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
+body {
+	background-color: #303030;
+	color: white;
+}
 
 img {
-	width: 600px;
+	width: 100%;
 }
 
 fieldset {
-	width: 400px;
+	width: 50%;
 }
 
 legend {
-	color: red;
+	color: #CD853F;
 }
 input:invalid{
 	background-color: #ff0000;
+}
+
+#price {
+	float: right;
+	position: fixed;
+	margin-left: 55%;
+	margin-top: 45%;
+}
+/*.styleMe {
+	display: inline;
+}
+.behälterClass {
+	display: inline;
+}*/
+
+/*Responsive Webdesign*/
+@media screen and (min-width: 586px){
+	#mobile {
+	display: none;}
+}
+
+@media screen and (max-width: 585px){
+	fieldset {
+		width: 93%;
+	}
+	div {
+	background-color: grey; }
+	#price {
+	display: none;}
 }
