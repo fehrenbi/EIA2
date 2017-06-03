@@ -36,20 +36,20 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 <fieldset id="">
 	<legend> Deine Daten </legend>
-		<input type="radio" name="Sex" value="w" id="Sex" />
+		<input type="radio" name="Sex" value="Frau" id="Sex" />
 		<label for="radio1">Frau</label>
-		<input type="radio" name="Sex" value="m" id="Sex"/>
+		<input type="radio" name="Sex" value="Herr" id="Sex"/>
 		<label for="radio2">Herr</label>
 		<br/>
 		
-		<input type="text" name="Name" placeholder="Vorname" id="Name" required/>
-		<input type="text" name="Name" placeholder="Nachname" id="Name" required/>
+		<input type="text" name="Name" placeholder="Vorname" id="Vorname" required/>
+		<input type="text" name="Name" placeholder="Nachname" id="Nachname" required/>
 		</br>
-		<input type="text" name="Straße" placeholder="Straße" required/>
-		<input type="text" name="Hausnummer" pattern="[0-9]" placeholder="Hausnr." required/>
+		<input type="text" name="Straße" placeholder="Straße" id="Straße" required/>
+		<input type="text" name="Hausnummer" pattern="[0-9]" placeholder="Hausnr." id="Hausnr" required/>
 		</br>
-		<input type="text" name="PLZ" pattern="[0-9]{5}" placeholder="PLZ" required/>
-		<input type="text" name="Ort" placeholder="Stadt" required/>
+		<input type="text" name="PLZ" pattern="[0-9]{5}" placeholder="PLZ" id="PLZ" required/>
+		<input type="text" name="Ort" placeholder="Stadt" id="Stadt" required/>
 		<hr/>
 		Wählen Sie Ihre Zahlungsart
 		<select name="Zahlungsart" id="Zahlungsart">
