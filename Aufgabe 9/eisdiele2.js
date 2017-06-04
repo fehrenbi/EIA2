@@ -97,11 +97,6 @@ var Eisdiele;
         fieldset.appendChild(label);*/
     }
     /*Eingaben anzeigen*/
-    document.getElementById("ubersicht").addEventListener("click", showBestellung);
-    function showBestellung(_event) {
-        let sex = document.getElementById("Sex");
-        alert("Bestellübersicht :\n" + sex.value);
-    }
     function handleChange(_event) {
         let target = _event.target;
         console.log("Changed " + target.id + " to " + target.value);
@@ -109,25 +104,6 @@ var Eisdiele;
         let sum = 0;
         let bestellung = document.getElementById("Bestellung");
         bestellung.innerText = "";
-        /* for (let i: number = 0; i < eissorten.length; i++) {
-             let inputEissorten: NodeListOf<HTMLInputElement> = <NodeListOf<HTMLInputElement>>document.getElementsByClassName("Sorten");
-             sum += parseInt(inputEissorten[i].value);
-             if (parseInt(inputEissorten[i].value) > 0) {
-                 document.getElementById("Bestellung").innerText += eissorten[i] + " " + (parseInt(inputEissorten[i].value) * 2) + "€" + "\n";
-             }
-         }
-         for (let i: number = 0; i < inputToppings.length; i++) {
-             if (inputToppings[i].checked) {
-                 sum += 1;
-                 document.getElementById("Bestellung").innerText += toppings[i] + " 1€" + "\n";
-             }
-         }
-         for (let i: number = 0; i < inputBehälter.length; i++) {
-             if (inputBehälter[i].checked) {
-                 sum += 3;
-                 document.getElementById("Bestellung").innerText += behälter[i] + " 3€" + "\n";
-             }
-         }*/
         let inputEissorten = document.getElementsByClassName("Sorten");
         for (let i = 0; i < inputEissorten.length; i++) {
             if (parseInt(inputEissorten[i].value) > 0) {
@@ -162,6 +138,25 @@ var Eisdiele;
         }
         console.log(sum);
         summe.innerText = sum.toString() + " €";
+    }
+    /*Bestellübersicht*/
+    document.getElementById("ubersicht").addEventListener("click", showBestellung);
+    function showBestellung(_event) {
+        let sex = document.getElementById("Sex");
+        let vorname = document.getElementById("Vorname");
+        let nachname = document.getElementById("Nachname");
+        let straße = document.getElementById("Straße");
+        let hausnr = document.getElementById("Hausnr");
+        let plz = document.getElementById("PLZ");
+        let stadt = document.getElementById("Stadt");
+        let zahlungsart = document.getElementById("Zahlungsart");
+        let behälter = document.getElementById("behälter");
+        let eissorten = document.getElementsByClassName("Sorten");
+        let toppings = document.getElementById("toppings");
+        alert("Bestellübersicht: \n" + "\n" + "Lieferanschrift: " + sex.value + " " + vorname.value + " " + nachname.value +
+            "\n" + straße.value + " " + hausnr.value + " , " + plz.value + " " + stadt.value + "\n" + "\n" + "Zahlungsart: " +
+            zahlungsart.value + "\n" + "\n" + "Bestellung: \n" + +behälter.getAttribute("behaelter") + "mit " +
+            toppings.value);
     }
 })(Eisdiele || (Eisdiele = {}));
 //# sourceMappingURL=eisdiele2.js.map
