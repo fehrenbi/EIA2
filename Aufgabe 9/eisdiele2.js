@@ -25,11 +25,14 @@ var Eisdiele;
         createEissorten();
         createBehälter();
         fieldset.addEventListener("change", handleChange);
+        fieldset.addEventListener("change", showSum);
         fieldset = document.getElementById("Toppings");
         createToppings();
         fieldset.addEventListener("change", handleChange);
+        fieldset.addEventListener("change", showSum);
         fieldset = document.getElementById("Data");
         fieldset.addEventListener("change", handleChange);
+        fieldset.addEventListener("change", showSum);
     }
     /*Fieldsets aufbauen*/
     //Eissorten
@@ -82,7 +85,7 @@ var Eisdiele;
         let descriptionElement = document.createElement("p");
         descriptionElement.innerText = _behälter;
         let input = document.createElement("input");
-        input.type = "radio";
+        input.type = "checkbox";
         input.className = "behälterClass";
         input.id = _behälter;
         input.name = "Dahrreichungsform";
@@ -102,26 +105,63 @@ var Eisdiele;
     function handleChange(_event) {
         let target = _event.target;
         console.log("Changed " + target.id + " to " + target.value);
+        //console.log(_event);
         let sum = 0;
-        for (let i = 0; i < eissorten.length; i++) {
-            let inputEissorten = document.getElementsByClassName("Sorten");
-            sum += parseInt(inputEissorten[i].value);
+        let bestellung = document.getElementById("Bestellung");
+        bestellung.innerText = "";
+        /* for (let i: number = 0; i < eissorten.length; i++) {
+             let inputEissorten: NodeListOf<HTMLInputElement> = <NodeListOf<HTMLInputElement>>document.getElementsByClassName("Sorten");
+             sum += parseInt(inputEissorten[i].value);
+             if (parseInt(inputEissorten[i].value) > 0) {
+                 document.getElementById("Bestellung").innerText += eissorten[i] + " " + (parseInt(inputEissorten[i].value) * 2) + "€" + "\n";
+             }
+         }
+         for (let i: number = 0; i < inputToppings.length; i++) {
+             if (inputToppings[i].checked) {
+                 sum += 1;
+                 document.getElementById("Bestellung").innerText += toppings[i] + " 1€" + "\n";
+             }
+         }
+         for (let i: number = 0; i < inputBehälter.length; i++) {
+             if (inputBehälter[i].checked) {
+                 sum += 3;
+                 document.getElementById("Bestellung").innerText += behälter[i] + " 3€" + "\n";
+             }
+         }*/
+        let inputEissorten = document.getElementsByClassName("Sorten");
+        for (let i = 0; i < inputEissorten.length; i++) {
             if (parseInt(inputEissorten[i].value) > 0) {
-                document.getElementById("Bestellung").innerText += eissorten[i] + " " + (parseInt(inputEissorten[i].value) * 2) + "€" + "\n";
+                bestellung.innerText += eissorten[i] + " " + ": " + (parseInt(inputEissorten[i].value) * 1) + "\n";
             }
         }
         for (let i = 0; i < inputToppings.length; i++) {
-            if (inputToppings[i].checked) {
-                sum += 1;
-                document.getElementById("Bestellung").innerText += toppings[i] + " 1€" + "\n";
+            if (parseInt(inputToppings[i].value) > 0) {
+                bestellung.innerText += toppings[i] + " " + ": " + (parseInt(inputToppings[i].value) * 1) + "\n";
             }
         }
         for (let i = 0; i < inputBehälter.length; i++) {
             if (inputBehälter[i].checked) {
-                sum += 3;
-                document.getElementById("Bestellung").innerText += behälter[i] + " 3€" + "\n";
+                bestellung.innerText += behälter[i] + " " + "\n";
             }
         }
+    }
+    function showSum(_event) {
+        let sum = 0;
+        let inputEissorten = document.getElementsByClassName("Sorten");
+        let summe = document.getElementById("Summe");
+        summe.innerText = "";
+        for (let i = 0; i < inputEissorten.length; i++) {
+            sum += parseInt(inputEissorten[i].value);
+        }
+        for (let i = 0; i < inputToppings.length; i++) {
+            sum += parseInt(inputToppings[i].value);
+        }
+        for (let i = 0; i < inputBehälter.length; i++) {
+            if (inputBehälter[i].checked)
+                sum += 0.5;
+        }
+        console.log(sum);
+        summe.innerText = sum.toString() + " €";
     }
 })(Eisdiele || (Eisdiele = {}));
 //# sourceMappingURL=eisdiele2.js.map

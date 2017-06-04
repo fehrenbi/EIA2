@@ -29,13 +29,16 @@ namespace Eisdiele {
         createEissorten();
         createBehälter();
         fieldset.addEventListener("change", handleChange);
+        fieldset.addEventListener("change", showSum);
         
         fieldset = <HTMLFieldSetElement>document.getElementById("Toppings");
         createToppings();
         fieldset.addEventListener("change", handleChange);
+        fieldset.addEventListener("change", showSum);
         
         fieldset = <HTMLFieldSetElement>document.getElementById("Data");
         fieldset.addEventListener("change", handleChange);
+        fieldset.addEventListener("change", showSum);
     }
     
 /*Fieldsets aufbauen*/
@@ -89,7 +92,7 @@ namespace Eisdiele {
         let descriptionElement: HTMLParagraphElement = document.createElement("p");
         descriptionElement.innerText = _behälter;
         let input: HTMLInputElement = document.createElement("input");
-        input.type = "radio";
+        input.type = "checkbox";
         input.className = "behälterClass";
         input.id = _behälter;
         input.name = "Dahrreichungsform";
@@ -114,9 +117,13 @@ namespace Eisdiele {
     function handleChange(_event: Event): void {
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
         console.log("Changed " + target.id + " to " + target.value);
+        //console.log(_event);
 
         let sum: number = 0;
-        for (let i: number = 0; i < eissorten.length; i++) {
+        let bestellung: HTMLElement = document.getElementById("Bestellung");
+        bestellung.innerText = ""; 
+        
+       /* for (let i: number = 0; i < eissorten.length; i++) {
             let inputEissorten: NodeListOf<HTMLInputElement> = <NodeListOf<HTMLInputElement>>document.getElementsByClassName("Sorten");
             sum += parseInt(inputEissorten[i].value);
             if (parseInt(inputEissorten[i].value) > 0) {
@@ -134,7 +141,44 @@ namespace Eisdiele {
                 sum += 3;
                 document.getElementById("Bestellung").innerText += behälter[i] + " 3€" + "\n";
             }
+        }*/
+        let inputEissorten: NodeListOf<HTMLInputElement> = <NodeListOf<HTMLInputElement>>document.getElementsByClassName("Sorten");
+        for (let i: number = 0; i < inputEissorten.length; i++) {
+            if (parseInt(inputEissorten[i].value) > 0) {
+                bestellung.innerText += eissorten[i] + " " + ": " + (parseInt(inputEissorten[i].value) * 1) + "\n";
+            }
         }
+        for (let i: number = 0; i < inputToppings.length; i++) {
+            if (parseInt(inputToppings[i].value) > 0) {
+                bestellung.innerText += toppings[i] + " " + ": " + (parseInt(inputToppings[i].value) * 1) + "\n";
+            }
+        }
+        for (let i: number = 0; i < inputBehälter.length; i++) {
+            if (inputBehälter[i].checked) {
+                bestellung.innerText += behälter[i] + " "  + "\n";
+            }
+        }
+    }
+    
+    function showSum(_event: Event): void {
+        let sum: number = 0;
+        let inputEissorten: NodeListOf<HTMLInputElement> = <NodeListOf<HTMLInputElement>>document.getElementsByClassName("Sorten");
+        let summe: HTMLElement = document.getElementById("Summe");
+        summe.innerText = ""; 
+        
+        for (let i: number = 0; i < inputEissorten.length; i++) {
+            sum += parseInt(inputEissorten[i].value);
+        }
+        for (let i: number = 0; i < inputToppings.length; i++) {
+            sum += parseInt(inputToppings[i].value);
+        }
+        for (let i: number = 0; i < inputBehälter.length; i++) {
+            if (inputBehälter[i].checked)
+                sum += 0.5;
+        }
+        console.log(sum);
+
+        summe.innerText = sum.toString() + " €";
     }
 
     
