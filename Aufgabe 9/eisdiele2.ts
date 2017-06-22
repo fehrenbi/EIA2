@@ -39,6 +39,10 @@ namespace Eisdiele {
         fieldset = <HTMLFieldSetElement>document.getElementById("Data");
         fieldset.addEventListener("change", handleChange);
         fieldset.addEventListener("change", showSum);
+        
+            /*Bestellübersicht*/
+        document.getElementById("ubersicht").addEventListener("click", showBestellung);
+
     }
     
 /*Fieldsets aufbauen*/
@@ -59,6 +63,7 @@ namespace Eisdiele {
         input.value = "0";
         input.id = _eissorten;
         input.className = "Sorten";
+        input.name = _eissorten;
         fieldset.appendChild(descriptionElement);
         fieldset.appendChild(input);
         //inputEissorten.push(input);
@@ -154,8 +159,6 @@ namespace Eisdiele {
         summe.innerText = sum.toString() + " €";
     }
 
-    /*Bestellübersicht*/
-    document.getElementById("ubersicht").addEventListener("click", showBestellung);
 
     function showBestellung(_event: Event): void {
         let sex: HTMLInputElement = <HTMLInputElement>document.getElementById("Sex");

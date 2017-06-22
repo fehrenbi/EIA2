@@ -33,6 +33,8 @@ var Eisdiele;
         fieldset = document.getElementById("Data");
         fieldset.addEventListener("change", handleChange);
         fieldset.addEventListener("change", showSum);
+        /*Bestellübersicht*/
+        document.getElementById("ubersicht").addEventListener("click", showBestellung);
     }
     /*Fieldsets aufbauen*/
     //Eissorten
@@ -52,6 +54,7 @@ var Eisdiele;
         input.value = "0";
         input.id = _eissorten;
         input.className = "Sorten";
+        input.name = _eissorten;
         fieldset.appendChild(descriptionElement);
         fieldset.appendChild(input);
         //inputEissorten.push(input);
@@ -139,8 +142,6 @@ var Eisdiele;
         console.log(sum);
         summe.innerText = sum.toString() + " €";
     }
-    /*Bestellübersicht*/
-    document.getElementById("ubersicht").addEventListener("click", showBestellung);
     function showBestellung(_event) {
         let sex = document.getElementById("Sex");
         let vorname = document.getElementById("Vorname");
