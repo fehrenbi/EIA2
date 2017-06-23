@@ -34,7 +34,7 @@ var Eisdiele;
         fieldset.addEventListener("change", handleChange);
         fieldset.addEventListener("change", showSum);
         /*Bestellübersicht*/
-        document.getElementById("ubersicht").addEventListener("click", showBestellung);
+        //document.getElementById("ubersicht").addEventListener("click", showBestellung);
     }
     /*Fieldsets aufbauen*/
     //Eissorten
@@ -91,7 +91,7 @@ var Eisdiele;
         input.type = "checkbox";
         input.className = "behälterClass";
         input.id = _behälter;
-        input.name = "Dahrreichungsform";
+        input.name = _behälter;
         fieldset.appendChild(descriptionElement);
         fieldset.appendChild(input);
         /*let label: HTMLLabelElement = document.createElement("label");
@@ -141,23 +141,6 @@ var Eisdiele;
         }
         console.log(sum);
         summe.innerText = sum.toString() + " €";
-    }
-    function showBestellung(_event) {
-        let sex = document.getElementById("Sex");
-        let vorname = document.getElementById("Vorname");
-        let nachname = document.getElementById("Nachname");
-        let straße = document.getElementById("Straße");
-        let hausnr = document.getElementById("Hausnr");
-        let plz = document.getElementById("PLZ");
-        let stadt = document.getElementById("Stadt");
-        let zahlungsart = document.getElementById("Zahlungsart");
-        let behälter = document.getElementById("behälter");
-        let eissorten = document.getElementsByClassName("Sorten");
-        let toppings = document.getElementById("toppings");
-        alert("Bestellübersicht: \n" + "\n" + "Lieferanschrift: " + sex.value + " " + vorname.value + " " + nachname.value +
-            "\n" + straße.value + " " + hausnr.value + " , " + plz.value + " " + stadt.value + "\n" + "\n" + "Zahlungsart: " +
-            zahlungsart.value + "\n" + "\n" + "Bestellung: \n" + +behälter.getAttribute("behaelter") + "mit " +
-            toppings.value);
     }
 })(Eisdiele || (Eisdiele = {}));
 //# sourceMappingURL=eisdiele2.js.map

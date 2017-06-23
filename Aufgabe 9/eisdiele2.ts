@@ -41,7 +41,7 @@ namespace Eisdiele {
         fieldset.addEventListener("change", showSum);
         
             /*Bestellübersicht*/
-        document.getElementById("ubersicht").addEventListener("click", showBestellung);
+        //document.getElementById("ubersicht").addEventListener("click", showBestellung);
 
     }
     
@@ -100,7 +100,7 @@ namespace Eisdiele {
         input.type = "checkbox";
         input.className = "behälterClass";
         input.id = _behälter;
-        input.name = "Dahrreichungsform";
+        input.name = _behälter;
         fieldset.appendChild(descriptionElement);
         fieldset.appendChild(input);
         /*let label: HTMLLabelElement = document.createElement("label");
@@ -160,7 +160,7 @@ namespace Eisdiele {
     }
 
 
-    function showBestellung(_event: Event): void {
+   /*function showBestellung(_event: Event): void {
         let sex: HTMLInputElement = <HTMLInputElement>document.getElementById("Sex");
         let vorname: HTMLInputElement = <HTMLInputElement>document.getElementById("Vorname");
         let nachname: HTMLInputElement = <HTMLInputElement>document.getElementById("Nachname");
@@ -175,8 +175,8 @@ namespace Eisdiele {
         let toppings: HTMLInputElement = <HTMLInputElement>document.getElementById("toppings");
         alert("Bestellübersicht: \n" + "\n" + "Lieferanschrift: " + sex.value + " " + vorname.value + " " + nachname.value +
             "\n" + straße.value + " " + hausnr.value + " , " + plz.value + " " + stadt.value + "\n" + "\n" + "Zahlungsart: " +
-            zahlungsart.value + "\n" + "\n" + "Bestellung: \n" + /*eissorten[i]*/ + behälter.getAttribute("behaelter") + "mit " +
+            zahlungsart.value + "\n" + "\n" + "Bestellung: \n" + eissorten[i] + behälter.getAttribute("behaelter") + "mit " +
             toppings.value
         );
-    }
+    }*/
 }
