@@ -8,12 +8,12 @@ Datum: 5.7.17
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 
-namespace snake {
+namespace hai {
     
     window.addEventListener("load", init);
     
     export let crc2: CanvasRenderingContext2D;
-    let allSpiders: Spider[] = [];
+    let allSpiders: Fish[] = [];
     
     
     function init (_event: Event): void {
@@ -22,16 +22,25 @@ namespace snake {
         crc2 = canvas.getContext("2d");
         
         drawGround();
-        drawSpider(200, 200);
+        drawSand();
+        drawBubbles(450, 400);
+        drawBubbles(1000, 100);
+        drawBubbles(883, 494);
+        drawBubbles(180, 200);
         
-        //zufällige Position Spinnen
-        for (var n: number = 0; n < 15; n++) {
+        //drawFish(300, 300);
+        //drawSpider(200, 200);
+        //drawSnake(300, 300);
+        
+        //zufällige Position Fische
+        for (var n: number = 0; n < 10; n++) {
             var x: number = (Math.random() * (1200 - 0)) + 0;
             var y: number = (Math.random() * (700 - 0)) + 0;
-            drawSpider(x, y);
+            let f: Fish = new Fish(x, y);
+            f.draw();
         }
         
-        drawSnake(300, 300);
+        
 
         //alert("Use  ◄ ▲ ▼ ► ► ◄ ▲ ▼ ");
     }
@@ -41,8 +50,61 @@ namespace snake {
     
     function drawGround(): void {
         crc2.beginPath();
-        crc2.fillStyle = "#CDAA7D";
+        crc2.fillStyle = "#7EC0EE";
         crc2.rect(0, 0, 1200, 600);
+        crc2.fill();
+        crc2.closePath();
+    }
+    function drawSand(): void {
+        crc2.beginPath();
+        crc2.fillStyle = "#EED8AE";
+        crc2.rect(0, 570, 1200, 30);
+        crc2.fill();
+        crc2.closePath();
+    }
+    function drawBubbles(_x: number, _y: number): void {
+        crc2.beginPath();
+        crc2.fillStyle = "#E0FFFF";
+        crc2.strokeStyle = "#104E8B";
+        crc2.arc(_x, _y, 5, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.stroke();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.fillStyle = "#E0FFFF";
+        crc2.strokeStyle = "#104E8B";
+        crc2.arc(_x + 8, _y - 15, 6, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.stroke();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.fillStyle = "#E0FFFF";
+        crc2.strokeStyle = "#104E8B";
+        crc2.arc(_x - 5, _y - 30, 7, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.stroke();
+        crc2.closePath();
+    }
+    function drawFish(_x: number, _y: number): void {
+        //Körper
+        crc2.beginPath();
+        crc2.fillStyle = "#FF4040";
+        crc2.arc(_x, _y, 10, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.closePath();
+        //Auge
+        crc2.beginPath();
+        crc2.fillStyle = "#000000";
+        crc2.arc(_x + 2, _y - 1 , 2, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.closePath();
+        //Flosse
+        crc2.beginPath();
+        crc2.fillStyle = "#FF4040";
+        crc2.moveTo(_x, _y);
+        crc2.lineTo(_x - 15, _y - 9);
+        crc2.lineTo(_x - 15, _y + 9);
+        crc2.lineTo(_x, _y);
         crc2.fill();
         crc2.closePath();
     }

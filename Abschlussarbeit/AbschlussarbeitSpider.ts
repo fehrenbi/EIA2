@@ -19,6 +19,8 @@ namespace snake {
         this.x = _x;
         this.y = _y;
     }
+    
+    
 
 
 }
