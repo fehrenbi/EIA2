@@ -46,7 +46,9 @@ namespace abschlussaufgabe {
         
         move(): void {
             var mouseX: number = event.ClientX;
-            var
+            var mouseY: number = event.ClientY;
+            this.x = mouseX;
+            this.y = mouseY;
         }
     }
 }

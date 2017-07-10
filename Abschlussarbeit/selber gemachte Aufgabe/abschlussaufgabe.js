@@ -49,7 +49,7 @@ var abschlussaufgabe;
         canvas.addEventListener("mousedown", moveShark);
         function moveShark() {
             let s = new abschlussaufgabe.Shark(220, 220);
-            s.draw();
+            s.move();
         }
         //Array
         /*for (let i: number = 0; i < 20; i++) {

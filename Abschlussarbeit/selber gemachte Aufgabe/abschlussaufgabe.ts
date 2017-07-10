@@ -61,7 +61,7 @@ namespace abschlussaufgabe {
         
         function moveShark(): void {
             let s: Shark = new Shark(220, 220);
-            s.draw();
+            s.move();
         }
         
         //Array
