@@ -11,12 +11,11 @@ var abschlussaufgabe;
     window.addEventListener("load", init);
     let allBubbles = [];
     let allTrash = [];
-    //let xTarget: number;
-    //let yTarget: number;
     abschlussaufgabe.fische = [];
     let amountBees = 10;
     let imgData;
-    //export let sorts: string[] = ["Kleeblatt", "Pink", "Rose"];
+    //export var mouseX: number = event.clientX;
+    //export var mouseY: number = event.clientY;
     function init(_event) {
         let canvas;
         canvas = document.getElementsByTagName("canvas")[0];
@@ -47,6 +46,11 @@ var abschlussaufgabe;
         }
         let s = new abschlussaufgabe.Shark(100, 100);
         s.draw();
+        canvas.addEventListener("mousedown", moveShark);
+        function moveShark() {
+            let s = new abschlussaufgabe.Shark(220, 220);
+            s.draw();
+        }
         //Array
         /*for (let i: number = 0; i < 20; i++) {
             var x: number = (Math.random() * (1150 - 150)) + 150;
@@ -69,8 +73,8 @@ var abschlussaufgabe;
         //setEventListener
         //canvas.addEventListener("click", newBee);
     }
+    //Hintergrundbild aufrufen
     function animate() {
-        //Hintergrundbild aufrufen
         abschlussaufgabe.crc2.putImageData(imgData, 0, 0);
         for (let i = 0; i < allBubbles.length; i++) {
             let b = allBubbles[i];

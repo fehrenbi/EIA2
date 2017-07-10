@@ -24,9 +24,11 @@ namespace abschlussaufgabe {
         }
         draw(): void {
             crc2.beginPath();
-            crc2.fillStyle = "#FFC0CB";
+            crc2.fillStyle = "#F0F0F0";
+            crc2.strokeStyle = "#00000";
             crc2.rect(this.x, this.y, 20, 20);
             crc2.fill();
+            crc2.stroke();
             crc2.closePath();
         }
         move(): void {
@@ -35,8 +37,14 @@ namespace abschlussaufgabe {
             if (this.y < 0) {
                 this.y = 600;
             }
+            if (this.y > 600) {
+                this.y = 0;
+            }
             if (this.x > 1200) {
                 this.x = 0;
+            }
+            if (this.x < 0) {
+                this.x = 1200;
             }
         }
        /* setRandomColor(): void {

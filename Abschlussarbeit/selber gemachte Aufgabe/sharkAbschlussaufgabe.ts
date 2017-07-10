@@ -43,5 +43,10 @@ namespace abschlussaufgabe {
             crc2.stroke();
             crc2.fill();
         }
+        
+        move(): void {
+            var mouseX: number = event.ClientX;
+            var
+        }
     }
 }

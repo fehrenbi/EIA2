@@ -41,6 +41,8 @@ var abschlussaufgabe;
             abschlussaufgabe.crc2.stroke();
             abschlussaufgabe.crc2.fill();
         }
+        move() {
+        }
     }
     abschlussaufgabe.Shark = Shark;
 })(abschlussaufgabe || (abschlussaufgabe = {}));

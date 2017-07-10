@@ -21,9 +21,11 @@ var abschlussaufgabe;
         }
         draw() {
             abschlussaufgabe.crc2.beginPath();
-            abschlussaufgabe.crc2.fillStyle = "#FFC0CB";
+            abschlussaufgabe.crc2.fillStyle = "#F0F0F0";
+            abschlussaufgabe.crc2.strokeStyle = "#00000";
             abschlussaufgabe.crc2.rect(this.x, this.y, 20, 20);
             abschlussaufgabe.crc2.fill();
+            abschlussaufgabe.crc2.stroke();
             abschlussaufgabe.crc2.closePath();
         }
         move() {
@@ -32,8 +34,14 @@ var abschlussaufgabe;
             if (this.y < 0) {
                 this.y = 600;
             }
+            if (this.y > 600) {
+                this.y = 0;
+            }
             if (this.x > 1200) {
                 this.x = 0;
+            }
+            if (this.x < 0) {
+                this.x = 1200;
             }
         }
     }

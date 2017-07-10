@@ -14,12 +14,12 @@ namespace abschlussaufgabe {
     export let crc2: CanvasRenderingContext2D;
     let allBubbles: Bubble[] = [];
     let allTrash: Trash[] = [];
-    //let xTarget: number;
-    //let yTarget: number;
     export let fische: Fish[] = [];
     let amountBees: number = 10;
     let imgData: ImageData;
-    //export let sorts: string[] = ["Kleeblatt", "Pink", "Rose"];
+
+    //export var mouseX: number = event.clientX;
+    //export var mouseY: number = event.clientY;
 
     function init(_event: Event): void {
         let canvas: HTMLCanvasElement;
@@ -57,6 +57,13 @@ namespace abschlussaufgabe {
         let s: Shark = new Shark(100, 100);
         s.draw();
         
+        canvas.addEventListener("mousedown", moveShark);
+        
+        function moveShark(): void {
+            let s: Shark = new Shark(220, 220);
+            s.draw();
+        }
+        
         //Array
         /*for (let i: number = 0; i < 20; i++) {
             var x: number = (Math.random() * (1150 - 150)) + 150;
@@ -82,9 +89,8 @@ namespace abschlussaufgabe {
         //setEventListener
         //canvas.addEventListener("click", newBee);
     }
-
+//Hintergrundbild aufrufen
     function animate(): void {
-        //Hintergrundbild aufrufen
         crc2.putImageData(imgData, 0, 0);
         for (let i: number = 0; i < allBubbles.length; i++) {
             let b: Bubble = allBubbles[i];
