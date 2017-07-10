@@ -10,6 +10,7 @@ var abschlussaufgabe;
 (function (abschlussaufgabe) {
     window.addEventListener("load", init);
     let allBubbles = [];
+    let allTrash = [];
     //let xTarget: number;
     //let yTarget: number;
     abschlussaufgabe.fische = [];
@@ -28,6 +29,13 @@ var abschlussaufgabe;
             let y = (Math.random() * (600 - 0)) + 0;
             let b = new abschlussaufgabe.Bubble(x, y);
             allBubbles.push(b);
+        }
+        //Müll erstellen 
+        for (let i = 0; i < 30; i++) {
+            let x = (Math.random() * (1200 - 0)) + 0;
+            let y = (Math.random() * (600 - 0)) + 0;
+            let t = new abschlussaufgabe.Trash(x, y);
+            allBubbles.push(t);
         }
         //Schleife für Malen der zufällig gesetzten Fische
         for (var n = 0; n < 10; n++) {

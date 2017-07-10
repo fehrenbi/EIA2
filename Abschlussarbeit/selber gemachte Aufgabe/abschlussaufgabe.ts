@@ -13,6 +13,7 @@ namespace abschlussaufgabe {
 
     export let crc2: CanvasRenderingContext2D;
     let allBubbles: Bubble[] = [];
+    let allTrash: Trash[] = [];
     //let xTarget: number;
     //let yTarget: number;
     export let fische: Fish[] = [];
@@ -34,6 +35,14 @@ namespace abschlussaufgabe {
             let y: number = (Math.random() * (600 - 0)) + 0;
             let b: Bubble = new Bubble(x, y);
             allBubbles.push(b);
+        }
+
+        //Müll erstellen 
+        for (let i: number = 0; i < 30; i++) {
+            let x: number = (Math.random() * (1200 - 0)) + 0;
+            let y: number = (Math.random() * (600 - 0)) + 0;
+            let t: Trash = new Trash(x, y);
+            allBubbles.push(t);
         }
         
         //Schleife für Malen der zufällig gesetzten Fische
