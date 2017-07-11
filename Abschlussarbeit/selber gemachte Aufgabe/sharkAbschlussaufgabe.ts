@@ -14,6 +14,11 @@ namespace abschlussaufgabe {
             super(_x, _y);
             console.log("create Shark");
         }
+        
+        update(): void {
+            this.draw();
+            this.move();
+        }
 
         draw(): void {
             //Schwanz

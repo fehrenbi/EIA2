@@ -86,6 +86,7 @@ namespace aufgabe8 {
 
         //setTimeout(animate)
         window.setTimeout(animate, 20);
+        
         //setEventListener
         canvas.addEventListener("click", newBee);
     }

@@ -47,27 +47,12 @@ var abschlussaufgabe;
         let s = new abschlussaufgabe.Shark(100, 100);
         s.draw();
         canvas.addEventListener("mousedown", moveShark);
-        function moveShark() {
+        function moveShark(_eventObject) {
             let s = new abschlussaufgabe.Shark(220, 220);
             s.move();
         }
-        //Array
-        /*for (let i: number = 0; i < 20; i++) {
-            var x: number = (Math.random() * (1150 - 150)) + 150;
-            var y: number = (Math.random() * (700 - 250)) + 250;
-            let f: SmallFish = new SmallFish(x, y);
-            f.draw();
-            flowers.push(f);
-        }
-        console.log("Blumen-Array: " + flowers);*/
         //gemaltes Bild abspeichern
         imgData = abschlussaufgabe.crc2.getImageData(0, 0, 1200, 600);
-        /* //honeybees erstellen
-         for (let i: number = 0; i < 5; i++) {
-             let h: Honeybee = new Honeybee(130, 385, "", xTarget, yTarget);
-             allBees.push(h);
-         }
-         console.log("Bienen-Array: " + allBees);*/
         //setTimeout(animate)
         window.setTimeout(animate, 20);
         //setEventListener
@@ -82,27 +67,7 @@ var abschlussaufgabe;
         }
         window.setTimeout(animate, 20);
     }
-    /*function newBee(): void {
-        let b: Bubble = new Bubble(130, 385);
-        switch (Math.floor((Math.random() * 4) + 1)) {
-            case 1:
-                b.color = "blue";
-                break;
-            case 2:
-                b.color = "green";
-                break;
-            case 3:
-                b.color = "red";
-                break;
-            case 4:
-                b.color = "yellow";
-                break;
-        }
-        b.update(); //Biene wird erstellt
-        allBubbles.push(b); //Biene wird array hinzugefügt
-    }*/
     //alle Funktionen für Elemente
-    //NEUE ELEMENTE!!
     function drawWater() {
         abschlussaufgabe.crc2.beginPath();
         abschlussaufgabe.crc2.fillStyle = "#7EC0EE";
