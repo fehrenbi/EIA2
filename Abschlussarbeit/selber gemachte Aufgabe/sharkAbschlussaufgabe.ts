@@ -49,11 +49,9 @@ namespace abschlussaufgabe {
             crc2.fill();
         }
         
-        move(): void {
-            var mouseX: number = event.ClientX;
-            var mouseY: number = event.ClientY;
+        /*move(): void {
             this.x = mouseX;
             this.y = mouseY;
-        }
+        }*/
     }
 }

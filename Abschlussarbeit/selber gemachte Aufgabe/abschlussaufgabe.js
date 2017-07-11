@@ -48,7 +48,7 @@ var abschlussaufgabe;
         s.draw();
         canvas.addEventListener("mousedown", moveShark);
         function moveShark(_eventObject) {
-            let s = new abschlussaufgabe.Shark(220, 220);
+            let s;
             s.move();
         }
         //gemaltes Bild abspeichern

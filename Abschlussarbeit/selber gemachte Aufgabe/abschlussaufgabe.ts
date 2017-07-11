@@ -58,10 +58,14 @@ namespace abschlussaufgabe {
         s.draw();
         
         canvas.addEventListener("mousedown", moveShark);
-        
+
+        var mouseX: number = event.ClientX;
+        var mouseY: number = event.ClientY;
+
         function moveShark(_eventObject: any): void {
-            let s: Shark = new Shark(220, 220);
-            s.move();
+            let s: Shark;
+            s.x = mouseX;
+            s.y = mouseY;
         }
     
            
