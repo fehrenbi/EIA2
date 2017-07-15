@@ -11,6 +11,8 @@ namespace abschlussaufgabe {
 
     window.addEventListener("load", init);
 
+    alert("Rette den Hai! Bewege ihn durch Klicken mit der Maus // Berühren des Bildschirms zu den Fischen, um sie zu fressen. Aber Achtung: Berührt der Hai zu oft den Müll, stirbt er!");
+    
     export let crc2: CanvasRenderingContext2D;
     let allBubbles: Bubble[] = [];
     let allTrash: Trash[] = [];
@@ -57,16 +59,16 @@ namespace abschlussaufgabe {
         let s: Shark = new Shark(100, 100);
         s.draw();
         
-        canvas.addEventListener("mousedown", moveShark);
+       // canvas.addEventListener("mousedown", moveShark);
 
-        var mouseX: number = event.ClientX;
-        var mouseY: number = event.ClientY;
-
-        function moveShark(_eventObject: any): void {
+            
+       /* function moveShark(_event: Event): void {
+            var mouseX: number = Event.clientX;
+            var mouseY: number = Event.clientY; 
             let s: Shark;
             s.x = mouseX;
             s.y = mouseY;
-        }
+        }*/
     
            
         //gemaltes Bild abspeichern

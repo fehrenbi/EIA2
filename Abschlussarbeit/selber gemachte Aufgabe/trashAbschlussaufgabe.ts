@@ -24,13 +24,15 @@ namespace abschlussaufgabe {
         }
         draw(): void {
             crc2.beginPath();
-            crc2.fillStyle = "#F0F0F0";
+            crc2.fillStyle = "#66CDAA";
             crc2.strokeStyle = "#00000";
             crc2.moveTo(this.x, this.y);
             crc2.lineTo(this.x + 20, this.y + 10);
             crc2.lineTo(this.x + 10, this.y - 10);
             crc2.lineTo(this.x, this.y);
-            crc2.lineTo(
+            crc2.lineTo(this.x + 6, this.y + 12);
+            crc2.lineTo(this.x + 14, this.y - 1);
+            //crc2. lineTo(this.x, this.y);
             //crc2.rect(this.x, this.y, 20, 20);
             crc2.fill();
             crc2.stroke();

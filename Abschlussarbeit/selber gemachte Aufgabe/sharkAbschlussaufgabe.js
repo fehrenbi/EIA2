@@ -13,6 +13,10 @@ var abschlussaufgabe;
             super(_x, _y);
             console.log("create Shark");
         }
+        update() {
+            this.draw();
+            // this.move();
+        }
         draw() {
             //Schwanz
             abschlussaufgabe.crc2.beginPath();
@@ -40,8 +44,6 @@ var abschlussaufgabe;
             abschlussaufgabe.crc2.closePath();
             abschlussaufgabe.crc2.stroke();
             abschlussaufgabe.crc2.fill();
-        }
-        move() {
         }
     }
     abschlussaufgabe.Shark = Shark;

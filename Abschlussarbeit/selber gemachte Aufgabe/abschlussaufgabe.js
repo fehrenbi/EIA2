@@ -9,6 +9,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 var abschlussaufgabe;
 (function (abschlussaufgabe) {
     window.addEventListener("load", init);
+    alert("Rette den Hai! Bewege ihn durch Klicken mit der Maus // Berühren des Bildschirms zu den Fischen, um sie zu fressen. Aber Achtung: Berührt der Hai zu oft den Müll, stirbt er!");
     let allBubbles = [];
     let allTrash = [];
     abschlussaufgabe.fische = [];
@@ -46,11 +47,14 @@ var abschlussaufgabe;
         }
         let s = new abschlussaufgabe.Shark(100, 100);
         s.draw();
-        canvas.addEventListener("mousedown", moveShark);
-        function moveShark(_eventObject) {
-            let s;
-            s.move();
-        }
+        // canvas.addEventListener("mousedown", moveShark);
+        /* function moveShark(_event: Event): void {
+             var mouseX: number = Event.clientX;
+             var mouseY: number = Event.clientY;
+             let s: Shark;
+             s.x = mouseX;
+             s.y = mouseY;
+         }*/
         //gemaltes Bild abspeichern
         imgData = abschlussaufgabe.crc2.getImageData(0, 0, 1200, 600);
         //setTimeout(animate)

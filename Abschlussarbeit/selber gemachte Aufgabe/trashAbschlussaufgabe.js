@@ -21,12 +21,15 @@ var abschlussaufgabe;
         }
         draw() {
             abschlussaufgabe.crc2.beginPath();
-            abschlussaufgabe.crc2.fillStyle = "#F0F0F0";
+            abschlussaufgabe.crc2.fillStyle = "#66CDAA";
             abschlussaufgabe.crc2.strokeStyle = "#00000";
             abschlussaufgabe.crc2.moveTo(this.x, this.y);
             abschlussaufgabe.crc2.lineTo(this.x + 20, this.y + 10);
             abschlussaufgabe.crc2.lineTo(this.x + 10, this.y - 10);
             abschlussaufgabe.crc2.lineTo(this.x, this.y);
+            abschlussaufgabe.crc2.lineTo(this.x + 6, this.y + 12);
+            abschlussaufgabe.crc2.lineTo(this.x + 14, this.y - 1);
+            //crc2. lineTo(this.x, this.y);
             //crc2.rect(this.x, this.y, 20, 20);
             abschlussaufgabe.crc2.fill();
             abschlussaufgabe.crc2.stroke();
