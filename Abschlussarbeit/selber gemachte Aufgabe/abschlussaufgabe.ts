@@ -30,6 +30,7 @@ namespace abschlussaufgabe {
         
         drawWater();
         drawSand();
+        drawHearts(340, 340);
         
         //Luftblasen erstellen und fliegen lassen
         for (let i: number = 0; i < 6; i++) {
@@ -126,6 +127,26 @@ namespace abschlussaufgabe {
         crc2.arc(_x - 5, _y - 30, 7, 0, 2 * Math.PI);
         crc2.fill();
         crc2.stroke();
+        crc2.closePath();
+    }
+    function drawHearts(_x: number, _y: number): void {
+        crc2.beginPath();
+        crc2.fillStyle = "#CD0000";
+        crc2.arc(_x, _y, 6, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.fillStyle = "#CD0000";
+        crc2.arc(_x + 11, _y, 6, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.fillStyle = "#CD0000";
+        crc2.moveTo(_x, _y);
+        crc2.lineTo(_x + 11, _y);
+        crc2. lineTo(_x + 5.5, _y + 10);
+        crc2.lineTo(_x, _y);
+        crc2.fill();
         crc2.closePath();
     }
     

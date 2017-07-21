@@ -23,6 +23,7 @@ var abschlussaufgabe;
         abschlussaufgabe.crc2 = canvas.getContext("2d");
         drawWater();
         drawSand();
+        drawHearts(340, 340);
         //Luftblasen erstellen und fliegen lassen
         for (let i = 0; i < 6; i++) {
             let x = (Math.random() * (1200 - 0)) + 0;
@@ -107,6 +108,26 @@ var abschlussaufgabe;
         abschlussaufgabe.crc2.arc(_x - 5, _y - 30, 7, 0, 2 * Math.PI);
         abschlussaufgabe.crc2.fill();
         abschlussaufgabe.crc2.stroke();
+        abschlussaufgabe.crc2.closePath();
+    }
+    function drawHearts(_x, _y) {
+        abschlussaufgabe.crc2.beginPath();
+        abschlussaufgabe.crc2.fillStyle = "#CD0000";
+        abschlussaufgabe.crc2.arc(_x, _y, 6, 0, 2 * Math.PI);
+        abschlussaufgabe.crc2.fill();
+        abschlussaufgabe.crc2.closePath();
+        abschlussaufgabe.crc2.beginPath();
+        abschlussaufgabe.crc2.fillStyle = "#CD0000";
+        abschlussaufgabe.crc2.arc(_x + 11, _y, 6, 0, 2 * Math.PI);
+        abschlussaufgabe.crc2.fill();
+        abschlussaufgabe.crc2.closePath();
+        abschlussaufgabe.crc2.beginPath();
+        abschlussaufgabe.crc2.fillStyle = "#CD0000";
+        abschlussaufgabe.crc2.moveTo(_x, _y);
+        abschlussaufgabe.crc2.lineTo(_x + 11, _y);
+        abschlussaufgabe.crc2.lineTo(_x + 5.5, _y + 10);
+        abschlussaufgabe.crc2.lineTo(_x, _y);
+        abschlussaufgabe.crc2.fill();
         abschlussaufgabe.crc2.closePath();
     }
 })(abschlussaufgabe || (abschlussaufgabe = {}));
