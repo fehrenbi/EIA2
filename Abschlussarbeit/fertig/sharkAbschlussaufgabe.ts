@@ -45,6 +45,19 @@ namespace shark {
             draw.arc(this.x + 11, this.y - 3, 2, 0, 2 * Math.PI);
             draw.closePath();
             draw.fill();
+            //Maul
+            draw.beginPath();
+            draw.strokeStyle = "#000000";
+            draw.moveTo(this.x + 10, this.y + 7);
+            draw.lineTo(this.x + 20, this.y + 12);
+            draw.closePath();
+            draw.stroke();
+            draw.beginPath();
+            draw.strokeStyle = "#000000";
+            draw.moveTo(this.x + 10, this.y + 7);
+            draw.lineTo(this.x + 22, this.y - 5);
+            draw.closePath();
+            draw.stroke();
         }
         
         move(_x: number, _y: number): void {

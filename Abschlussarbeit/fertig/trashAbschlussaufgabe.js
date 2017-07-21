@@ -20,17 +20,6 @@ var shark;
             // this.setRandomColor();
         }
         draw() {
-            /*trashDraw.beginPath();
-            trashDraw.fillStyle = "#ADFF2F";
-            trashDraw.strokeStyle = "#00000";
-            trashDraw.moveTo(this.x, this.y);
-            trashDraw.lineTo(this.x + 20, this.y + 10);
-            trashDraw.lineTo(this.x + 10, this.y - 10);
-            trashDraw.lineTo(this.x, this.y);
-            //trashDraw.rect(this.x, this.y, 20, 20);
-            trashDraw.fill();
-            trashDraw.stroke();
-            trashDraw.closePath();*/
             shark.trashDraw.beginPath();
             shark.trashDraw.fillStyle = "#778899";
             shark.trashDraw.strokeStyle = "#76B900";

@@ -40,6 +40,19 @@ var shark;
             shark.draw.arc(this.x + 11, this.y - 3, 2, 0, 2 * Math.PI);
             shark.draw.closePath();
             shark.draw.fill();
+            //Maul
+            shark.draw.beginPath();
+            shark.draw.strokeStyle = "#000000";
+            shark.draw.moveTo(this.x + 10, this.y + 7);
+            shark.draw.lineTo(this.x + 20, this.y + 12);
+            shark.draw.closePath();
+            shark.draw.stroke();
+            shark.draw.beginPath();
+            shark.draw.strokeStyle = "#000000";
+            shark.draw.moveTo(this.x + 10, this.y + 7);
+            shark.draw.lineTo(this.x + 22, this.y - 5);
+            shark.draw.closePath();
+            shark.draw.stroke();
         }
         move(_x, _y) {
             this.x = _x;
