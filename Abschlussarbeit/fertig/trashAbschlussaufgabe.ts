@@ -24,7 +24,7 @@ namespace shark {
         }
         draw(): void {
             trashDraw.beginPath();
-            trashDraw.fillStyle = "#F0F0F0";
+            trashDraw.fillStyle = "#ADFF2F";
             trashDraw.strokeStyle = "#00000";
             trashDraw.moveTo(this.x, this.y);
             trashDraw.lineTo(this.x + 20, this.y + 10);

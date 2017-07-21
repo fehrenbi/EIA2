@@ -16,7 +16,7 @@ var shark;
     var hitBoxWidth = 20;
     var hitBoxHeigh = 20;
     var numBubbles = 6;
-    var numTrash = 30;
+    var numTrash = 40;
     var numFish = 10;
     var numHeart = 3;
     var moved = false;

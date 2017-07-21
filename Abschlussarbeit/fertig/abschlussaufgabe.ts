@@ -26,7 +26,7 @@ namespace shark {
     var hitBoxHeigh: number = 20;
 
     var numBubbles: number = 6;
-    var numTrash: number = 30;
+    var numTrash: number = 40;
     var numFish: number = 10;
     var numHeart: number = 3;
 

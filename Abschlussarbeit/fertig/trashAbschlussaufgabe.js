@@ -21,7 +21,7 @@ var shark;
         }
         draw() {
             shark.trashDraw.beginPath();
-            shark.trashDraw.fillStyle = "#F0F0F0";
+            shark.trashDraw.fillStyle = "#ADFF2F";
             shark.trashDraw.strokeStyle = "#00000";
             shark.trashDraw.moveTo(this.x, this.y);
             shark.trashDraw.lineTo(this.x + 20, this.y + 10);
