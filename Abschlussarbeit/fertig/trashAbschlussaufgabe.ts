@@ -23,7 +23,7 @@ namespace shark {
            // this.setRandomColor();
         }
         draw(): void {
-            trashDraw.beginPath();
+            /*trashDraw.beginPath();
             trashDraw.fillStyle = "#ADFF2F";
             trashDraw.strokeStyle = "#00000";
             trashDraw.moveTo(this.x, this.y);
@@ -33,7 +33,26 @@ namespace shark {
             //trashDraw.rect(this.x, this.y, 20, 20);
             trashDraw.fill();
             trashDraw.stroke();
+            trashDraw.closePath();*/
+            trashDraw.beginPath();
+            trashDraw.fillStyle = "#778899";
+            trashDraw.strokeStyle = "#76B900";
+            trashDraw.arc(this.x, this.y, 7, 0, 2 * Math.PI);
             trashDraw.closePath();
+            trashDraw.fill();
+            trashDraw.stroke();
+            trashDraw.beginPath();
+            trashDraw.fillStyle = "#778899";
+            trashDraw.strokeStyle = "#76B900";
+            trashDraw.arc(this.x - 9, this.y, 7, 0, 2 * Math.PI);
+            trashDraw.closePath();
+            trashDraw.fill();
+            trashDraw.stroke();
+            trashDraw.beginPath();
+            trashDraw.fillStyle = "#778899";
+            trashDraw.arc(this.x - 4.5, this.y - 5, 7, 0, 2 * Math.PI);
+            trashDraw.closePath();
+            trashDraw.fill();
         }
         move(): void {
             this.x += Math.random() * 0 - 0.5;

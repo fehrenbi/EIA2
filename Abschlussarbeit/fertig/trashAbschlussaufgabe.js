@@ -20,17 +20,36 @@ var shark;
             // this.setRandomColor();
         }
         draw() {
-            shark.trashDraw.beginPath();
-            shark.trashDraw.fillStyle = "#ADFF2F";
-            shark.trashDraw.strokeStyle = "#00000";
-            shark.trashDraw.moveTo(this.x, this.y);
-            shark.trashDraw.lineTo(this.x + 20, this.y + 10);
-            shark.trashDraw.lineTo(this.x + 10, this.y - 10);
-            shark.trashDraw.lineTo(this.x, this.y);
+            /*trashDraw.beginPath();
+            trashDraw.fillStyle = "#ADFF2F";
+            trashDraw.strokeStyle = "#00000";
+            trashDraw.moveTo(this.x, this.y);
+            trashDraw.lineTo(this.x + 20, this.y + 10);
+            trashDraw.lineTo(this.x + 10, this.y - 10);
+            trashDraw.lineTo(this.x, this.y);
             //trashDraw.rect(this.x, this.y, 20, 20);
+            trashDraw.fill();
+            trashDraw.stroke();
+            trashDraw.closePath();*/
+            shark.trashDraw.beginPath();
+            shark.trashDraw.fillStyle = "#778899";
+            shark.trashDraw.strokeStyle = "#76B900";
+            shark.trashDraw.arc(this.x, this.y, 7, 0, 2 * Math.PI);
+            shark.trashDraw.closePath();
             shark.trashDraw.fill();
             shark.trashDraw.stroke();
+            shark.trashDraw.beginPath();
+            shark.trashDraw.fillStyle = "#778899";
+            shark.trashDraw.strokeStyle = "#76B900";
+            shark.trashDraw.arc(this.x - 9, this.y, 7, 0, 2 * Math.PI);
             shark.trashDraw.closePath();
+            shark.trashDraw.fill();
+            shark.trashDraw.stroke();
+            shark.trashDraw.beginPath();
+            shark.trashDraw.fillStyle = "#778899";
+            shark.trashDraw.arc(this.x - 4.5, this.y - 5, 7, 0, 2 * Math.PI);
+            shark.trashDraw.closePath();
+            shark.trashDraw.fill();
         }
         move() {
             this.x += Math.random() * 0 - 0.5;
