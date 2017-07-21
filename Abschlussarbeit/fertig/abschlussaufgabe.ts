@@ -57,7 +57,7 @@ namespace shark {
         trashCanvas = document.getElementsByTagName("canvas")[4];
         trashDraw = trashCanvas.getContext("2d");
 
-
+        alert("Rette den Hai! Hilf dem Hai, alle kleinen Fischchen zu fressen, ohne dabei den hochgifitgen Ocean-Müll zu berühren.");
 
         drawWater();
         drawSand();
