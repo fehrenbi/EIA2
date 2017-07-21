@@ -57,22 +57,5 @@ namespace shark {
             trashDraw.beginPath();
             trashDraw.closePath();
             }
-       /* setRandomColor(): void {
-                switch (Math.floor((Math.random() * 4) + 1)) {
-                    case 1:
-                        this.color = "blue";
-                        break;
-                    case 2:
-                        this.color = "green";
-                        break;
-                    case 3:
-                        this.color = "red";
-                        break;
-                    case 4:
-                        this.color = "yellow";
-                        break;
-                }
-
-            }*/
         }
     }

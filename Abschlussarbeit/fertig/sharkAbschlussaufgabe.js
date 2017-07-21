@@ -8,8 +8,9 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 */
 var shark;
 (function (shark) {
-    class Shark {
+    class Shark extends shark.Fish {
         constructor(_x, _y) {
+            super(_x, _y);
             console.log("create Shark");
             this.x = _x;
             this.y = _y;
@@ -33,11 +34,11 @@ var shark;
             shark.draw.closePath();
             shark.draw.stroke();
             shark.draw.fill();
+            //Auge
             shark.draw.beginPath();
-            shark.draw.fillStyle = "#9C9C9C";
-            shark.draw.arc(this.x + 7, this.y, 20, 0, 1 * Math.PI);
+            shark.draw.fillStyle = "#000000";
+            shark.draw.arc(this.x + 11, this.y - 3, 2, 0, 2 * Math.PI);
             shark.draw.closePath();
-            shark.draw.stroke();
             shark.draw.fill();
         }
         move(_x, _y) {

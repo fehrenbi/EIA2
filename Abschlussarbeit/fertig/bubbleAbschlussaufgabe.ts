@@ -11,7 +11,6 @@ namespace shark {
     export class Bubble {
         x: number; 
         y: number;
-        //color: string;
         
         constructor (_x: number, _y: number) {
             console.log("Ich bin der constructor Bubble");
@@ -52,22 +51,5 @@ namespace shark {
                 this.y = 600;
             }
         }
-       /* setRandomColor(): void {
-                switch (Math.floor((Math.random() * 4) + 1)) {
-                    case 1:
-                        this.color = "blue";
-                        break;
-                    case 2:
-                        this.color = "green";
-                        break;
-                    case 3:
-                        this.color = "red";
-                        break;
-                    case 4:
-                        this.color = "yellow";
-                        break;
-                }
-
-            }*/
-        }
     }
+}

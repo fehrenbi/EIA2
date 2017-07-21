@@ -8,11 +8,12 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 */
 
 namespace shark {
-    export class Shark {
+    export class Shark extends Fish {
         x: number;
         y: number;
 
         constructor(_x: number, _y: number) {
+            super(_x, _y);
             console.log("create Shark");
             this.x = _x;
             this.y = _y;
@@ -38,11 +39,11 @@ namespace shark {
             draw.closePath();
             draw.stroke(); 
             draw.fill();
+            //Auge
             draw.beginPath();
-            draw.fillStyle = "#9C9C9C";
-            draw.arc(this.x + 7, this.y, 20, 0, 1 * Math.PI);
+            draw.fillStyle = "#000000";
+            draw.arc(this.x + 11, this.y - 3, 2, 0, 2 * Math.PI);
             draw.closePath();
-            draw.stroke();
             draw.fill();
         }
         

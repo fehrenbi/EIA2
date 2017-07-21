@@ -9,7 +9,6 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 var shark;
 (function (shark) {
     class Bubble {
-        //color: string;
         constructor(_x, _y) {
             console.log("Ich bin der constructor Bubble");
             this.x = _x;
